@@ -1,5 +1,5 @@
-# wasta-language-scientist
-_Some changes and additions to Wasta Linux for the language and linguistic Scientist._
+# Wasta Language Scientist
+_Some changes and additions to [Wasta Linux](https://github.com/wasta-linux) for the language and linguistic Scientist._
 
 This script attempts to document some changes (mostily additions) to Wasta for the lingusitic Data Scientist.
 
