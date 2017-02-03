@@ -32,13 +32,13 @@ Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubu
 
 ###Section 1
 
-* _[gloobus preview](https://launchpad.net/gloobus-preview)_ [Install review](http://www.webupd8.org/2015/01/quick-file-previewer-gloobus-preview.html)
-* _MacBuntu theme elements_ Vaious elmenets including:
+* _[gloobus preview](https://launchpad.net/gloobus-preview)_ :: [Install review](http://www.webupd8.org/2015/01/quick-file-previewer-gloobus-preview.html) - Spacebar previews a file.
+* _MacBuntu theme elements_ Various elmenets including:
  * icons
  * window shading
-* _[planck](https://launchpad.net/plank)_ An OS X Like dock. 
+* _[planck](https://launchpad.net/plank)_ - An OS X like dock. 
  * Plank theme files
-* _slingcold_[Install review](http://www.noobslab.com/2015/03/slingscold-launcher-fixed-for-all.html) - a launchpad like application which sits in the dock.
+* _slingcold_ :: [Install review](http://www.noobslab.com/2015/03/slingscold-launcher-fixed-for-all.html) - a launchpad like application which sits in the dock.
  * [Instructions on getting the icon for slingcold to appear in plank](http://askubuntu.com/questions/810307/how-do-i-put-slingscold-icon-on-plank).
 * _[Albert](https://albertlauncher.github.io/)_  - a spotlight like tool. [Install Review]()
  
