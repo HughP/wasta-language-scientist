@@ -8,7 +8,7 @@ The reasons we want to use wasta (and Linux are the following): We feel that the
 
 Wasta is at its core the minimum tools which might be needed by the minority language user who is just getting started with computing in their language. This script endevors to bring the rest of what was forgotten (or intentionally left out). The new focus for this derivative of Wasta is on the modern interdisciplinary, digital humanities sensitive, anthroplogically aware linguist, who is loooking to enrich the lives and communities of minority language users (and digitaly under-resourced) creatives.
 
-Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubuntu.com/download/desktop) and 2. [Cinnamon](http://cinnamon.linuxmint.com/), (from Linux Mint). Having both GUIs is a Wasta innovation when compared to standard Ubuntu.
+Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubuntu.com/download/desktop) and 2. [Cinnamon](http://cinnamon.linuxmint.com/), (from [Linux Mint](https://www.linuxmint.com/)). Having both GUIs is a Wasta innovation when compared to standard Ubuntu.
 
 1. We might want to change somethings about the look and feel of our Wasta machine (this is more or less to bring over some features from OS X). Many reserchers use OS X or macOS in their work. Making the jump to Wasta is easier when there are some familure behaviors in the way the computer responds.
 
@@ -42,4 +42,20 @@ Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubu
  * [Instructions on getting the icon for slingcold to appear in plank](http://askubuntu.com/questions/810307/how-do-i-put-slingscold-icon-on-plank).
 * _[Albert](https://albertlauncher.github.io/)_  - a spotlight like tool. [Install Review]()
  
+###Section 2
  
+ * _[kcharselect](https://utils.kde.org/projects/kcharselect/)_ :: A tool from the KDE project which allows the user to find and select specific characters in Unicode.
+ 
+###Section 3
+
+* Make a directory for websites
+* Get [WordPress](https://www.wordpress.org/)
+* _[MySQL](https://dev.mysql.com/downloads/)_
+* phpMyAdmin3
+
+* _[Linuxbrew](http://linuxbrew.sh/)_ - This is a package manager.
+ * _Why linux brew?_
+      *  Can install software to a home directory and so does not require sudo.
+      *  Install software not packaged by the native distribution.
+      *  Install up-to-date versions of software when the native distribution is old.
+      *  Use the same package manager to manage both your Mac and Linux machines.
