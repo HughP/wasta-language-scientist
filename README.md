@@ -8,6 +8,8 @@ The reasons we want to use wasta (and Linux are the following): We feel that the
 
 Wasta is at its core the minimum tools which might be needed by the minority language user who is just getting started with computing in their language. This script endevors to bring the rest of what was forgotten (or intentionally left out). The new focus for this derivative of Wasta is on the modern interdisciplinary, digital humanities sensitive, anthroplogically aware linguist, who is loooking to enrich the lives and communities of minority language users (and digitaly under-resourced) creatives.
 
+Rather than providing a lean machine (as Wasta core does), we are looking at providing a grab and go solution.
+
 Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubuntu.com/download/desktop) and 2. [Cinnamon](http://cinnamon.linuxmint.com/), (from [Linux Mint](https://www.linuxmint.com/)). Having both GUIs is a Wasta innovation when compared to standard Ubuntu.
 
 1. We might want to change somethings about the look and feel of our Wasta machine (this is more or less to bring over some features from OS X). Many reserchers use OS X or macOS in their work. Making the jump to Wasta is easier when there are some familure behaviors in the way the computer responds.
@@ -40,7 +42,7 @@ Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubu
  * Plank theme files
 * _slingcold_ :: [Install review](http://www.noobslab.com/2015/03/slingscold-launcher-fixed-for-all.html) - a launchpad like application which sits in the dock.
  * [Instructions on getting the icon for slingcold to appear in plank](http://askubuntu.com/questions/810307/how-do-i-put-slingscold-icon-on-plank).
-* _[Albert](https://albertlauncher.github.io/)_  - a spotlight like tool. [Install Review]()
+* _[Albert](https://albertlauncher.github.io/)_ :: [Install Review]() - a spotlight like tool.
  
 ###Section 2
  
@@ -49,7 +51,7 @@ Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubu
 ###Section 3
 
 * Make a directory for websites
-* Get [WordPress](https://www.wordpress.org/)
+* [WordPress](https://www.wordpress.org/)
 * _[MySQL](https://dev.mysql.com/downloads/)_
 * phpMyAdmin3
 * _[Linuxbrew](http://linuxbrew.sh/)_ - This is a package manager.
@@ -67,3 +69,25 @@ Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubu
 
 
 ###Section 4
+
+
+###Section 5
+
+###Section 6
+These sections will follow the musings of the folowing five lists: 
+* http://lingtransoft.info/apps/results
+* http://hugh.thejourneyler.org/2013/software-needs-for-a-language-documentation-project/
+* http://hugh.thejourneyler.org/2013/lexical-data-management-helps-with-sil-software/
+* https://github.com/RichardLitt/endangered-languages
+* http://emeld.org/school/toolroom/software/software-display.cfm
+
+###Section 7
+
+###Section 8
+
+* -[Pioneers](http://pio.sourceforge.net/)_ - A Settlers of Catan like game.
+* _[JCloisterZone](http://jcloisterzone.com/en/)_ A Carcassonne like game.
+* _yetris_ - A Tetris like game
+* _Ninvaders_ - A Space Invaders like game.
+
+###Section 9
