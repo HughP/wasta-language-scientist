@@ -1,6 +1,7 @@
 # Wasta Language Scientist
 _Some changes and additions to [Wasta Linux](https://github.com/wasta-linux) for the language and linguistic Scientist._
 
+##Introduction
 This script attempts to document some changes (mostily additions) to Wasta for the lingusitic data scientist.
 
 The reasons we want to use wasta (and Linux are the following): We feel that there is great value in being on the same operating system with the indegenous language speaking (and using) memebers of our team. This equality could happen with any operating system. However, with linux the cost of outfitting an entire team or part of a community with tools to make tools for their language is much lower than with OS X, or Windows. Wasta gives us the power of Ubuntu with the ease of access connect with SIL software systems.
@@ -26,3 +27,19 @@ Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubu
 8. We might want some fun things to do... Because basically, the folks at Ubuntu don't have great tastes for intellegent games.
 
 9. We might want some quality reference resources on literacy, lingusitics, langage documentation, language development, and language program managment.
+
+##Included Software (over standard Wasta)
+
+###Section 1
+
+* _[gloobus preview](https://launchpad.net/gloobus-preview)_ [Install review](http://www.webupd8.org/2015/01/quick-file-previewer-gloobus-preview.html)
+* _MacBuntu theme elements_ Vaious elmenets including:
+ * icons
+ * window shading
+* _[planck](https://launchpad.net/plank)_ An OS X Like dock. 
+ * Plank theme files
+* _slingcold_[Install review](http://www.noobslab.com/2015/03/slingscold-launcher-fixed-for-all.html) - a launchpad like application which sits in the dock.
+ * [Instructions on getting the icon for slingcold to appear in plank](http://askubuntu.com/questions/810307/how-do-i-put-slingscold-icon-on-plank).
+* _[Albert](https://albertlauncher.github.io/)_  - a spotlight like tool. [Install Review]()
+ 
+ 
