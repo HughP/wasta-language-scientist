@@ -85,8 +85,8 @@ These sections will follow the musings of the folowing five lists:
 
 ###Section 8
 
-* -[Pioneers](http://pio.sourceforge.net/)_ - A Settlers of Catan like game.
-* _[JCloisterZone](http://jcloisterzone.com/en/)_ A Carcassonne like game.
+* _[Pioneers](http://pio.sourceforge.net/)_ - A Settlers of Catan like game.
+* _[JCloisterZone](http://jcloisterzone.com/en/)_ - A Carcassonne like game.
 * _yetris_ - A Tetris like game
 * _Ninvaders_ - A Space Invaders like game.
 
