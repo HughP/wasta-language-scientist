@@ -2,26 +2,13 @@
 
 #A Wasta Linux version for the Linguistic Data Scientist (a version of the SIL consultant).
 
-#This script attempts to document some changes (mostily additions) to Wasta for the lingusitic Data Scientist.
-#The reasons we want to use wasta (and linux are the following): We feel that there is great value in being on the same operating system with the indegenous memebers of our team. This equality could happen with any operatin system. However, with linux the cost of outfitting an entire team or part of a community with tools to make tools for their language is much lower than with OS X, or Windows. Wasta gives us the power of Ubuntu with the eas of access of not needing to connect with SIL Software systems.
-#This script endevors to bring the rest of what was forgtten for the modern interdisciplinary, digital Humanities sensitive, anthroplogically aware lingusit, loooking to enrich the lives and communities of minority language (and digitaly under-resourced) speakers.
-#Wasta has two GUI interfaces. 1. Unity which ships with Ubuntu and 2. Cinnimon, which is a Wasta innovation.
-
-#1. We might want to change somethings about the look and feel of our Wasta machine (this is more or less to bring over some features from OS X).
-#2. We might want some fonts and text processing tools
-#3. We might want to use some apache (Web) based tools for sharing our work globally or to work as a team on a local network. So, we will install some web devleopment tools.
-#4. We might want some access to iOS devices. These are really popular and we want to be able to connect them (and their sensors) as best as possible into our workflows.
-#5. We might want some SIL tools for doing some things "The SIL Way"... if there is one. (Bascially, SIL makes some awesome tools, but these are not all installed by default on Wasta.)
-#6. We might want some other tools to do linguistics. There are lots of tools for linguistics which are, sometimes not known about, and sometimes known about. We want to put them in the machine for ease of access to the end user.
-#7. We might want some data wrangling tools for our data. As a data scientist we are really keen to be able to collect good data, to detect patterns, in that data, and then also present that data in (often visual) compelling ways to our collegues, funders, and the communities we work with.
-#8. We might want some fun things to do... Because basically, the folks at Ubuntu don't have great tastes for intellegent games.
-
 # A couple of assumptions.
 # We have the User folder (~/). This specifies the default location for many things. We like to use these places where possible. The addtions of the following folder(s) is mostly carry over from how I work on OS X.
 # We create three new folders under '~/':
 #1. '~/Addititions to Wasta Linux' (code of applications and documentation goes here)
 #2. '~/Sites' (Web Site Development goes here)
 #3. '~/"User's Real Name"' where everything not specified via install scripts gets added and my personal folders/files are located. (All my crap goes here.)
+
 # For instance see the following tree:
 # .
 # ├── Additions\ to\ Wasta\ Linux
@@ -36,13 +23,12 @@
 # ├── Templates
 # └── Videos
 
-
 ##################### 1. Behavior, Look, and Feel #####################
 ###UX Tip: If things look and function like you are used to then adoption is quicker ###
 
 #To get some features to make Wasta function more like a Mac OS X
 
-##To get quickview like functionality - where space bar can preview a file. (Allegelly this is also a feature in unity.)
+##To get quickview like functionality - where space bar can preview a file. (Allegelly this is also a feature in unity, but the gloobus method has more file types supported.)
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt-get update
 sudo apt-get install gloobus-preview
@@ -63,6 +49,19 @@ sudo apt-get install macbuntu-os-ithemes-lts-v7
 #cd /usr/share/icons/mac-cursors && sudo ./uninstall-mac-cursors.sh
 #sudo apt-get remove macbuntu-os-icons-lts-v7 macbuntu-os-ithemes-lts-v7
 
+#Install Plank like OS X Dock
+#This may not be the best dock for linux I am open to more suggestions.
+##Press Ctrl + Right Click to access settings
+sudo apt-get install plank
+
+###uninstall plank and themes
+#sudo apt-get autoremove plank macbuntu-os-plank-theme-lts-v7
+
+##Install Plank Themes
+#sudo add-apt-repository ppa:noobslab/macbuntu
+#sudo apt-get update
+sudo apt-get install macbuntu-os-plank-theme-lts-v7
+
 #Install Slingcold - like launchpad on OS X
 #sudo add-apt-repository ppa:noobslab/macbuntu
 #sudo apt-get update
@@ -74,21 +73,8 @@ sudo apt-get install slingscold
 #sudo apt-get update
 sudo apt-get install albert
 
-#Install Plank like OS X Dock
-#This may not be the best dock for linux I am open to more suggestions.
-##Press Ctrl + Right Click to access settings
-sudo apt-get install plank
-
-##Install Plank Themes
-#sudo add-apt-repository ppa:noobslab/macbuntu
-#sudo apt-get update
-sudo apt-get install macbuntu-os-plank-theme-lts-v7
-
-###uninstall plank and themes
-#sudo apt-get autoremove plank macbuntu-os-plank-theme-lts-v7
-
 #####################2. Fonts and some text processing tools #####################
-### Let's install the KDE Character selector to find the right unicode character ###
+### Let's install the KDE Character selector to find the right unicode character. The KDE interaction around character selection is not as clean or clear as on OS X, but is much better than the GNOME interface which ships with unity. ###
 sudo apt-get install kcharselect
 
 
@@ -102,9 +88,11 @@ sudo apt-get install kcharselect
 mkdir ~/Sites/Wordpress
 wget https://www.wordpress.org/latest.zip ~/Sites/Wordpress
 
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
 #I use homebrew on OS X. I am familure with that packaging system so let's use linuxbrew and get some useful tools. (Of course this is linux so if a tool exists via apt-get then we should try and get it from there first. However, sometimes it is better to not mess with the OS's version of something and leave that in place and use a different version of things, also sometimes homebrew repos get updated faster than apt-get repos do.)
 
-#We need to install MySQL
+#We will need to install MySQL
 
 
 #Let's get RStudio and tools
@@ -120,6 +108,8 @@ wget https://www.wordpress.org/latest.zip ~/Sites/Wordpress
 sudo apt install ruby
 sudo ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
 PATH="$HOME/.linuxbrew/bin:$PATH"
+
+#Some of the commands are going to be dulpicated be cause they are copppied from various sources.
 sudo apt-get install build-essential curl git python-setuptools ruby
 
 #Actually these should be to ~/.bashrc because that is what wasta uses.
@@ -139,7 +129,7 @@ brew tap homebrew/science
 brew tap homebrew/services
 brew tap homebrew/apache
 brew tap homebrew/games
-Brew install openssl #Security #
+brew install openssl #Security #
 brew install mysql
 
 # We've installed your MySQL database without a root password. To secure it run:
@@ -174,11 +164,19 @@ brew install phpmyadmin3
 #   - change your secret blowfish
 #   - uncomment the configuration lines (pma, pmapass ...)
 
-brew install apache
-brew install wp-cli
+
+# If we brew apache then:
+# After installing httpd22 or httpd24, the configuration files will be in $(brew --prefix)/etc/apache2/2.2 and $(brew --prefix)/etc/apache2/2.4, respectively.
+
 
 sudo apt install nodejs-legacy
+sudo apt install nodejs
 brew install nodejs
+
+brew list: 
+bzip2  csv-fix	expat	  gpatch  icu4c    libpng  ncurses    node     patchelf     pkg-config	xz	zlib
+cmake  curl	freetype  hello   libedit  mysql   ninvaders  openssl  phpmyadmin3  tree	yetris
+
 
 ####################4. iOS access ######################
 #We take photos with our iOS devices and want to access those photos to write our newsletters.
@@ -232,6 +230,7 @@ sudo apt-get install fieldworks
 sudo apt-get install wesay
 
 #Let's get some SIL text converters and other kinds of scripts...
+Like Teckit and characterCounter
 #Let's get all the SIL Fonts
 
 
@@ -284,6 +283,42 @@ Connect with other linux users here: https://wiki.debian.org/DebianGis
 #Install GPS Babble
 #Install GPS Prune
 #Install QLandKarteGT
+
+Several really helpful tutorials for SVG Maps
+http://techslides.com/d3-world-maps-tooltips-zooming-and-queue/
+http://bost.ocks.org/mike/map/
+http://bl.ocks.org/mbostock
+
+http://geocommons.com/
+http://www.naturalearthdata.com/
+http://www.naturalearthdata.com/downloads/
+http://www.osgeo.org/
+
+
+Nigeria Map files Project (Blench map files)
+
+Correll Draw files --> Inscape/LibreOffice -->SVG --> Google Earth KML files
+
+
+Links to Consider:
+
+Support for KML & google map points 
+	http://www.inkscapeforum.com/viewtopic.php?f=5&t=6129
+
+Converting GIS Vector Data to KML
+	https://developers.google.com/kml/articles/vector
+
+Exporting vector layer as kml in QGIS
+	http://pvanb.wordpress.com/2012/07/31/exporting-vector-layer-as-kml-in-qgis/
+
+Two Online Vector GIS/GPS/KML Conversion Utilities
+	http://freegeographytools.com/2008/two-online-vector-gisgpskml-conversion-utilities
+
+https://support.google.com/earth/answer/148103
+
+http://en.wikipedia.org/wiki/SK1_(program)
+http://wiki.inkscape.org/wiki/index.php/Frequently_asked_questions
+http://en.wikipedia.org/wiki/CorelDRAW
 
 
 ###Let's get some Academic reference and resource managment tools ###
