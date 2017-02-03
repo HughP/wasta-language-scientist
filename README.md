@@ -52,10 +52,18 @@ Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubu
 * Get [WordPress](https://www.wordpress.org/)
 * _[MySQL](https://dev.mysql.com/downloads/)_
 * phpMyAdmin3
-
 * _[Linuxbrew](http://linuxbrew.sh/)_ - This is a package manager.
  * _Why linux brew?_
       *  Can install software to a home directory and so does not require sudo.
       *  Install software not packaged by the native distribution.
       *  Install up-to-date versions of software when the native distribution is old.
       *  Use the same package manager to manage both your Mac and Linux machines.
+ * When _apt-get_ when _linuxbrew_? This is linux, so if a tool exists via apt-get then we should try and get it from there first. However, sometimes it is better to not mess with the OS's version of something and leave that in place and use a different version of things, also sometimes homebrew repos get updated faster than apt-get repos do.
+* Ruby
+* build-essential 
+* curl
+* git 
+* python-setuptools
+
+
+###Section 4
