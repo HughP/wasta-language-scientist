@@ -92,8 +92,6 @@ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pha
 
 #I use homebrew on OS X. I am familure with that packaging system so let's use linuxbrew and get some useful tools. (Of course this is linux so if a tool exists via apt-get then we should try and get it from there first. However, sometimes it is better to not mess with the OS's version of something and leave that in place and use a different version of things, also sometimes homebrew repos get updated faster than apt-get repos do.)
 
-#We will need to install MySQL
-
 
 #Let's get RStudio and tools
 
@@ -130,7 +128,7 @@ brew tap homebrew/services
 brew tap homebrew/apache
 brew tap homebrew/games
 brew install openssl #Security #
-brew install mysql
+brew install mysql #to make wordpress work
 
 # We've installed your MySQL database without a root password. To secure it run:
 #     mysql_secure_installation
@@ -173,9 +171,40 @@ sudo apt install nodejs-legacy
 sudo apt install nodejs
 brew install nodejs
 
-brew list: 
-bzip2  csv-fix	expat	  gpatch  icu4c    libpng  ncurses    node     patchelf     pkg-config	xz	zlib
-cmake  curl	freetype  hello   libedit  mysql   ninvaders  openssl  phpmyadmin3  tree	yetris
+# brew list: 
+# bzip2  csv-fix	expat	  gpatch  icu4c    libpng  ncurses    node     patchelf     pkg-config	xz	zlib
+# cmake  curl	freetype  hello   libedit  mysql   ninvaders  openssl  phpmyadmin3  tree	yetris
+
+#It is a fine linke between good tools for writing and good tools for witing in Markdown and food tools for programing. Atom is good in all these ways. Let's git it and some supporting tools.
+#Atom is only available for 64-bit Linux systems.
+#Launch Atom using the installed 'atom' command.
+#The Linux version does not currently automatically update so you will need to repeat these steps to upgrade to future releases.
+#https://github.com/atom/atom/releases/tag/v1.13.1
+
+git clone https://github.com/atom/atom.git
+Download atom-amd64.deb from the Atom releases page.
+
+#Run sudo dpkg --install atom-amd64.deb on the downloaded package.
+
+sudo dpkg --install atom-amd64.deb
+
+# After installing atom, install WordPress dictionary and other plugins to make cool things happen.
+apm install wordpress-dictionary
+apm install nord-atom-ui
+apm install nord-atom-syntax
+apm install file-icons
+apm install markdown-pdf
+apm install hyperclick
+apm install git-pear
+apm install autocomplete-python
+apm install wordpress-api
+apm install drupal
+apm install atom-drupal-api
+apm install language-regexp
+apm install regex-filter-and-generator
+apm install wordpress-suite
+
+
 
 
 ####################4. iOS access ######################
@@ -233,9 +262,6 @@ sudo apt-get install wesay
 Like Teckit and characterCounter
 #Let's get all the SIL Fonts
 
-
-###Let's install the KDE Character selector to find the right unicode character ###
-sudo apt-get install kcharselect
 
 #####################6. Non-SIL Software for Linguistics and the data scientist #####################
 ##Check this community for more content: https://wiki.debian.org/DebianScience/
@@ -422,18 +448,7 @@ sudo hg clone https://bitbucket.org/neilb/csvfix
 #Install panDoc
 # http://pandoc.org/
 
-Let's get Atom
-git clone https://github.com/atom/atom.git
 
-Atom is only available for 64-bit Linux systems.
-
-    Download atom-amd64.deb from the Atom releases page.
-    Run sudo dpkg --install atom-amd64.deb on the downloaded package.
-    Launch Atom using the installed atom command.
-
-The Linux version does not currently automatically update so you will need to repeat these steps to upgrade to future releases.
-
-https://github.com/atom/atom/releases/tag/v1.13.1
 
 #Install WineHQ
 
@@ -505,4 +520,9 @@ trying to install uber writer: http://uberwriter.wolfvollprecht.de/
 sudo add-apt-repository ppa:w-vollprecht/ppa
 sudo apt-get update
 sudo apt-get install uberwriter
+get and install several of xnview tools from http://www.xnview.com/en/nconvert/
 
+
+
+
+https://vc.wpbakery.com/
