@@ -93,17 +93,17 @@ Some taps (like a ppa in Linux) for linuxbrew (via brew):
  * homebrew/games
 
 Via brew
-* _[openSSL]()_ (current release) - Wasta stays with Ubuntu release version.
+* _[openSSL](https://www.openssl.org/)_ (current release) - Wasta stays with Ubuntu release version.
 * _[MySQL](https://dev.mysql.com/downloads/)_
-* _[phpMyAdmin3]()_
-* _[nodejs]()_
+* _[phpMyAdmin3](https://www.phpmyadmin.net/)_
+* _[nodejs](https://nodejs.org/en/)_
 
 Via apt
  * nodejs-legacy
  * nodejs
 
 Via wget download
- * _[atom]() - a markdown editor and code writer with syntax highlighting. Lots of plugins are available. Those listed here are installed via atom. If you know a computer language search for a syntax or auto complete plugin to fit your style.
+ * _[atom](https://atom.io/)_ - a markdown editor and code writer with syntax highlighting. Lots of plugins are available. Those listed here are installed via atom. If you know a computer language search for a syntax or auto complete plugin to fit your style.
   * wordpress-dictionary
   * nord-atom-ui
   * nord-atom-syntax
@@ -120,7 +120,7 @@ Via wget download
   * wordpress-suite
 
 ### Section 4
-(via apt) - we are updating these to make sure we have the latest even because this functionality gets a lot of tweaking and updating.
+(via apt) - we are updating the [libimobiledevice](http://www.libimobiledevice.org/) libraries to make sure we have the latest even because this functionality gets a lot of tweaking and updating.
  * libimobiledevice-utils
  * ideviceinstaller
  * python-imobiledevice
@@ -131,20 +131,19 @@ Via wget download
  * ifuse
 
 Make a directory for those projects we get from github. (~/github-tools)
-We are getting the following two libs from github because they are even newer than what is in the apt repos. Then we use make to install them.
-
- *_[libplist](https://github.com/libimobiledevice/libplist)_
- *_[libusbmuxd](https://github.com/libimobiledevice/libusbmuxd)_
+We are getting the following two libs from github because they are even newer than what is in the apt repos. Then we use `make` to install them.
+ * _[libplist](https://github.com/libimobiledevice/libplist)_
+ * _[libusbmuxd](https://github.com/libimobiledevice/libusbmuxd)_
 
 ### Section 5
 
- * XLingPaper
+ * _[XLingPaper](http://xlingpaper.org/)_
   * Old Java
- * TecKit
- * Fieldworks
- * WeSay
+ * _[Fieldworks]()_ - via apt.
+ * _[WeSay]()_ - via apt.
+ * _[TECkit](http://scripts.sil.org/TECkitIntro)_ :: [on github](https://github.com/silnrsi/teckit)
+ * _[characterCount](http://scripts.sil.org/UnicodeCharacterCount)_ -via wget.
  * Fonts
- * characterCounter
 
 
 ### Section 6
@@ -159,9 +158,9 @@ These sections will follow the musings of the following five lists:
 
 ### Section 8
 
-* _[Pioneers](http://pio.sourceforge.net/)_ - A Settlers of Catan like game.
-* _[JCloisterZone](http://jcloisterzone.com/en/)_ - A Carcassonne like game.
-* _yetris_ - A Tetris like game.
-* _[Ninvaders](http://ninvaders.sourceforge.net/)_ - A Space Invaders like game.
+* _[Pioneers](http://pio.sourceforge.net/)_ - A Settlers of Catan like game. - via apt.
+* _[JCloisterZone](http://jcloisterzone.com/en/)_ - A Carcassonne like game. - via git.
+* _yetris_ - A Tetris like game. - via brew
+* _[Ninvaders](http://ninvaders.sourceforge.net/)_ - A Space Invaders like game. - via brew
 
 ### Section 9

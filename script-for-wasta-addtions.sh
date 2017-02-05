@@ -121,7 +121,7 @@ sudo sudo apt-get install -y build-essential make cmake scons curl git \
                                libbz2-dev libcurl4-openssl-dev \
                                libexpat-dev libncurses-dev
 
-#Let's add some homebrew equiivlenets of PPAs                               
+#Let's add some homebrew equiivlenets of PPAs
 brew tap josegonzalez/homebrew-php
 brew tap homebrew/science
 brew tap homebrew/services
@@ -132,10 +132,10 @@ brew install mysql #to make wordpress work
 
 # We've installed your MySQL database without a root password. To secure it run:
 #     mysql_secure_installation
-# 
+#
 # To connect run:
 #     mysql -uroot
-# 
+#
 # A "/etc/mysql/my.cnf" from another install may interfere with a Homebrew-built
 # server starting up correctly.
 brew install phpmyadmin3
@@ -154,9 +154,9 @@ brew install phpmyadmin3
 #     </IfModule>
 #   </Directory>
 # Then, open http://localhost/phpmyadmin3
-# 
+#
 # More documentation : file:///home/greenlantern/.linuxbrew/Cellar/phpmyadmin3/3.5.8.2/share/phpmyadmin3/doc/
-# 
+#
 # Configuration has been copied to /home/greenlantern/.linuxbrew/etc/phpmyadmin3.config.inc.php
 # Don't forget to:
 #   - change your secret blowfish
@@ -171,7 +171,7 @@ sudo apt install nodejs-legacy
 sudo apt install nodejs
 brew install nodejs
 
-# brew list: 
+# brew list:
 # bzip2  csv-fix	expat	  gpatch  icu4c    libpng  ncurses    node     patchelf     pkg-config	xz	zlib
 # cmake  curl	freetype  hello   libedit  mysql   ninvaders  openssl  phpmyadmin3  tree	yetris
 
@@ -212,7 +212,7 @@ apm install wordpress-suite
 
 sudo apt install libimobiledevice-utils
 
-sudo apt-get install ideviceinstaller python-imobiledevice libimobiledevice-utils libimobiledevice4 libplist2 python-plist ifuse 
+sudo apt-get install ideviceinstaller python-imobiledevice libimobiledevice-utils libimobiledevice4 libplist2 python-plist ifuse
 
 mkdir github-tools
 git clone https://github.com/libimobiledevice/libplist.git github-tools
@@ -259,7 +259,13 @@ sudo apt-get install fieldworks
 sudo apt-get install wesay
 
 #Let's get some SIL text converters and other kinds of scripts...
-Like Teckit and characterCounter
+#Install TECkit
+git clone https://github.com/silnrsi/teckit.git ~/github-tools
+./github-tools/teckit/autogen.sh
+make -C /github-tools/teckit
+sudo make install -C /github-tools/teckit
+#Install CharacterCount
+* wget http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=UnicodeCCountPL_v0_3&filename=UnicodeCCount-0_3.zip
 #Let's get all the SIL Fonts
 
 
@@ -328,7 +334,7 @@ Correll Draw files --> Inscape/LibreOffice -->SVG --> Google Earth KML files
 
 Links to Consider:
 
-Support for KML & google map points 
+Support for KML & google map points
 	http://www.inkscapeforum.com/viewtopic.php?f=5&t=6129
 
 Converting GIS Vector Data to KML
@@ -356,7 +362,7 @@ Get SIL on board with this: http://citationstyles.org/publishers/
 
 #Install standalone Zotero and Zotfile, and LO plugins
 
-sudo apt-add-repository ppa:smathot/cogscinl 
+sudo apt-add-repository ppa:smathot/cogscinl
 sudo apt-get install zotero
 Also install Zotero plugins PDF-to-text
 and PDF-info which are seperate downloads
@@ -377,9 +383,9 @@ wget https://download.zotero.org/standalone/4.0.29.10/Zotero-4.0.29.10_linux-x86
 wget https://download.zotero.org/integration/Zotero-LibreOffice-Plugin-3.5.12.xpi
 ##http://zotfile.com/
 git clone https://github.com/jlegewie/zotfile.git
-wget https://github.com/jlegewie/zotfile/archive/master.zip 
+wget https://github.com/jlegewie/zotfile/archive/master.zip
 
-rename zip file to .xpi 
+rename zip file to .xpi
 
 wget https://addons.mozilla.org/firefox/downloads/file/420697/zotfile-4.2.6-fx.xpi
 
@@ -398,16 +404,16 @@ sudo apt-get install calibre
 git clone https://github.com/OpenRefine/OpenRefine.git github-tools/
 
 #Install Spyder
-sudo apt-get 
+sudo apt-get
 
 #Python Modules for Lingusitics.....
 Some popular books include:
 
     Think Python: how to Think Like a Computer Scientist. Alan B. Downey (2012). O’Reilly
     Natural Language Processing with Python.Steven Bird, Ewan Klein & Edward Loper (2009) O’Reilly
-    Essential Python for Corpus Linguistics. Mark Johnson. Blackwell Publishers, Inc. Cambridge, MA, USA ©2010 ISBN:1405145633 9781405145633 
+    Essential Python for Corpus Linguistics. Mark Johnson. Blackwell Publishers, Inc. Cambridge, MA, USA ©2010 ISBN:1405145633 9781405145633
     Python Programming: An Introduction to Computer Science, First Edition, by John Zelle, Franklin Beedle & Associates publishers, 2003. ISBN: 978-1887902991 for python 2.x and second edn for python v. 3.x book resources: http://mcsp.wartburg.edu/zelle/python/
-    
+
 #Modules:
 lingusitictagger: http://omz-software.com/pythonista/docs/ios/linguistictagger.html
 nltk: http://www.nltk.org/
@@ -420,7 +426,7 @@ lingpy Python Library for Historical Linguistics: http://lingpy.org more tools a
 panlex_lite data from panlex https://github.com/nltk/nltk/issues/1253 via nltk
 corpus-downloader 0.1.11 : https://pypi.python.org/pypi/corpus-downloader/0.1.11
 
-Lists of lingustically related modules: 
+Lists of lingustically related modules:
 * https://code.activestate.com/pypm/search:linguistics/
 * https://libraries.io/search?keywords=linguistics&languages=Python
 
@@ -482,35 +488,35 @@ wget http://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.40.tar.gz
 
 
 # #Unix Platforms
-# 
+#
 #     #Download the Image-ExifTool distribution from the ExifTool home page (The file you download will have a name like "Image-ExifTool-10.40.tar.gz".) Unpack the distribution and make it your current directory by typing:
-# 
+#
 #         cd <your download directory>
 #         gzip -dc Image-ExifTool-10.40.tar.gz | tar -xf -
 #         cd Image-ExifTool-10.40
-# 
+#
 #     #(At this point you may run exiftool by typing "exiftool <image file name>".) Test and install ExifTool by typing:
-# 
+#
 #         perl Makefile.PL
 #         make test
 #         sudo make install
-# 
+#
 #     (Note: The "make test" step is not required, but useful because it runs a full suite of tests to verify that ExifTool is working properly on your system. The "sudo make install" command requires that you have su access, and will prompt for your password. This will make ExifTool and its documentation accessible to all users on your system. If you don't have su access, you can run ExifTool in your own account by moving "exiftool" and its "lib" directory to any convienient location, preferably somewhere in your PATH.)
-# 
+#
 # You can now run exiftool by typing "exiftool". Also, you can consult the ExifTool documentation with commands like:
-# 
+#
 #     perldoc exiftool
 #     perldoc Image::ExifTool
 #     perldoc Image::ExifTool::TagNames
-# 
+#
 # or
-# 
+#
 #     man exiftool
 #     man Image::ExifTool
 #     man Image::ExifTool::TagNames
-# 
+#
 # Uninstalling
-# 
+#
 #     Type "sudo make uninstall" from the distribution directory.
 #     (Note: Unfortunately, newer systems may give an "Uninstall is unsafe and deprecated" message even though uninstalling ExifTool is safe because it has no dependencies. If this happens, the necessary commands to remove the installed files will be listed, and these commands must be run manually.)
 
