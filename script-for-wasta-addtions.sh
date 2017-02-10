@@ -1,6 +1,20 @@
 #!/bin/bash
 
-#A Wasta Linux version for the Linguistic Data Scientist (a version of the SIL consultant).
+#!/bin/bash
+################################################################################
+# Script Name: wasta-data-scientist.bash
+# Authors: Hugh Paterson III <email here>
+# Version: 0.01
+# License: GPL
+# Dependencies: None.
+# OS: Designed to work on wasta/Ubuntu read inline comments and README.md file.
+# Target goal: A Wasta Linux version for the Linguistic Data Scientist (a version of the SIL consultant).
+
+# This script has a collection of sub-scripts. These sub-scripts can be run
+#independently or collectively in series by running the master script which ties
+#together the sub-scripts. In this case the ties are all written in bash while
+#some of the other scripts are written in other languages. But all are exicuted
+#in the terminal.
 
 # A couple of assumptions.
 # We have the User folder (~/). This specifies the default location for many things. We like to use these places where possible. The addtions of the following folder(s) is mostly carry over from how I work on OS X.
@@ -8,6 +22,9 @@
 #1. '~/Addititions to Wasta Linux' (code of applications and documentation goes here)
 #2. '~/Sites' (Web Site Development goes here)
 #3. '~/"User's Real Name"' where everything not specified via install scripts gets added and my personal folders/files are located. (All my crap goes here.)
+
+#Now there are some other applications which create folders in the User's root. This script does not try to set a new default (and in some cases the applications do not allow for path modification).
+
 
 # For instance see the following tree:
 # .
@@ -23,61 +40,34 @@
 # ├── Templates
 # └── Videos
 
+#After the whole script runs several application folders will appear in addtion to those mentioned above. This will give us more of the view below.
+
+# .
+# ├── Additions\ to\ Wasta\ Linux
+# ├── Bloom
+# ├── ChorusHub
+# ├── Desktop
+# ├── Documents
+# ├── Downloads
+# ├── ELAN_5.0.0-alpha
+# ├── Hugh\ Paterson\ III
+# ├── Music
+# ├── Pictures
+# ├── Public
+# ├── R
+# ├── Sites
+# ├── Templates
+# ├── Videos
+# ├── WeSay
+# └── WritingSystems
+
+
 ##################### 1. Behavior, Look, and Feel #####################
-###UX Tip: If things look and function like you are used to then adoption is quicker ###
+source sections/look-and-feel.bash
 
-#To get some features to make Wasta function more like a Mac OS X
-
-##To get quickview like functionality - where space bar can preview a file. (Allegelly this is also a feature in unity, but the gloobus method has more file types supported.)
-sudo add-apt-repository ppa:nilarimogard/webupd8
-sudo apt-get update
-sudo apt-get install gloobus-preview
-sudo apt-get install unoconv gnumeric
-sudo apt-get install nemo-gloobus-sushi
-nemo -q
-
-##Various tools from the MacBuntu theme
-
-sudo add-apt-repository ppa:noobslab/macbuntu
-sudo apt-get update
-
-#Theme icons Changes the icons and windows to light gray instead of dark gray as is with the current wasta theme. The default window location of the three buttons on the windows standard right side instead of the OS X based left side can be done with the system preference pane.
-
-sudo apt-get install macbuntu-os-icons-lts-v7
-sudo apt-get install macbuntu-os-ithemes-lts-v7
-#Optoinal uninstall of theme icons
-#cd /usr/share/icons/mac-cursors && sudo ./uninstall-mac-cursors.sh
-#sudo apt-get remove macbuntu-os-icons-lts-v7 macbuntu-os-ithemes-lts-v7
-
-#Install Plank like OS X Dock
-#This may not be the best dock for linux I am open to more suggestions.
-##Press Ctrl + Right Click to access settings
-sudo apt-get install plank
-
-###uninstall plank and themes
-#sudo apt-get autoremove plank macbuntu-os-plank-theme-lts-v7
-
-##Install Plank Themes
-#sudo add-apt-repository ppa:noobslab/macbuntu
-#sudo apt-get update
-sudo apt-get install macbuntu-os-plank-theme-lts-v7
-
-#Install Slingcold - like launchpad on OS X
-#sudo add-apt-repository ppa:noobslab/macbuntu
-#sudo apt-get update
-sudo apt-get install slingscold
-
-#Install Albert - like spotlight
-### This still requires one to set the Shortcut key in app settings
-#sudo add-apt-repository ppa:noobslab/macbuntu
-#sudo apt-get update
-sudo apt-get install albert
-
-#####################2. Fonts and some text processing tools #####################
+#####################2. Fonts and some character tools #####################
 ### Let's install the KDE Character selector to find the right unicode character. The KDE interaction around character selection is not as clean or clear as on OS X, but is much better than the GNOME interface which ships with unity. ###
 sudo apt-get install kcharselect
-
-
 
 #####################3. Install apache web based Devtools ####################
 #Apache2 comes preinstalled. check out http://0.0.0.0 in the browser.
@@ -85,11 +75,68 @@ sudo apt-get install kcharselect
 
 #I use Wordpress a lot so lets get that
 
-mkdir ~/Sites/Wordpress
-wget https://www.wordpress.org/latest.zip ~/Sites/Wordpress
+mkdir ~/Sites/WordPress
+wget https://www.wordpress.org/latest.zip ~/Sites/WordPress
+unzip ~/Sites/WordPress/latest.zip
+#Now lets control wordpress and the installation via the commandline. We use the officially sanctioned tool from: http://wp-cli.org/
+#That way we can use wp plugin install <plugin-slug> and we’ll get the latest version of the list of plugins we want.
 
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
 
+# We could have downloaded a .deb pacage from github too. But I like the curl method.
+# https://github.com/wp-cli/builds/tree/gh-pages/deb
+
+#We will also download and install an autocompletion script for the bash termnial. instruction here: https://make.wordpress.org/cli/handbook/installing/#tab-completions
+wget https://github.com/wp-cli/wp-cli/raw/master/utils/wp-completion.bash
+#I'm going to put it in the same folder folder as wp--cli.phar only because they are related and am not experience with where to put things like this and there were no specific instructions.
+sudo mv wp-completion.bash /usr/local/bin/wp-completion.bash
+# We do need to echo a source for this to our .bashrc
+
+#Added by Hugh to make the wordpress bash completion script work.
+echo 'source /usr/local/bin/wp-completion.bash' >> ~/.bashrc
+
+#Then we need to make sure that the .bashrc file is updated by the current user secession.
+source ~/.bashrc
+
+#Now lets get the best themes and plugins for a variety of purposes
+#Let's start with a few additional commands for WordPress CLI.
+#Various composer dependencies will be added. I really don't know much about composer.
+wp package install git@github.com:runcommand/hook.git #WP-CLI Example
+wp package install runcommand/find-unused-themes #https://runcommand.io/wp/find-unused-themes/
+#wp package install boonebgorges/wp-cli-git-helper #https://github.com/boonebgorges/wp-cli-git-helper There is a conflic with this one and several features. Bug report filed.
+wp package install iandunn/wp-cli-plugin-active-on-sites #https://github.com/iandunn/wp-cli-plugin-active-on-sites
+wp package install boonebgorges/wp-cli-buddypress #https://github.com/boonebgorges/wp-cli-buddypress
+wp package install sinebridge/wp-cli-about #https://github.com/sinebridge/wp-cli-about
+wp package install sebastiaandegeus/wp-cli-salts-command #https://github.com/sebastiaandegeus/wp-cli-salts-command
+wp package install trepmal/blog-extractor #https://github.com/trepmal/blog-extractor
+wp package install timhysniu/wp-cli-template #https://github.com/timhysniu/wp-cli-template
+wp package install trepmal/wp-revisions-cli #https://github.com/trepmal/wp-revisions-cli
+wp package install wp-cli/admin-command #https://github.com/wp-cli/admin-command
+wp package install wp-cli/wp-super-cache-cli #https://github.com/wp-cli/wp-super-cache-cli
+wp package install runcommand/assign-featured-images #https://runcommand.io/wp/assign-featured-images/
+wp package install miya0001/wp-cli-vhosts:@stable #https://github.com/miya0001/wp-cli-vhosts
+wp package install mikedance/wp-cli-favorite-plugins #https://github.com/mikedance/wp-cli-favorite-plugins
+wp package install pressbooks/pb-cli #https://github.com/pressbooks/pb-cli/
+wp package install wp-cli/scaffold-package-command #https://github.com/wp-cli/scaffold-package-command
+wp package install 10up/mu-migration #https://github.com/10up/MU-Migration
+wp package install pulsestorm/wp-static-html-output-plugin #https://github.com/astorm/wp-static-html-output-plugin
+
+wp plugin install pods
+
+
+wget https://downloads.wordpress.org/plugin/pods.2.6.8.zip
+wget https://downloads.wordpress.org/plugin/filters.0.4.zip
+
+#Updating all of our plugins to the latest version is just as simple as this command.
+
+##wp plugin update --all
+
+#If the plugin is not in the wordpress repo then WP-CLI can not automatically get it. So we will need to use git.
+git clone https://github.com/pods-framework/pods.git
+git clone https://github.com/Webonary/sil-dictionary-webonary.git
+git clone https://github.com/pressbooks/pressbooks.git
 #I use homebrew on OS X. I am familure with that packaging system so let's use linuxbrew and get some useful tools. (Of course this is linux so if a tool exists via apt-get then we should try and get it from there first. However, sometimes it is better to not mess with the OS's version of something and leave that in place and use a different version of things, also sometimes homebrew repos get updated faster than apt-get repos do.)
 
 
@@ -180,32 +227,32 @@ brew install nodejs
 #Launch Atom using the installed 'atom' command.
 #The Linux version does not currently automatically update so you will need to repeat these steps to upgrade to future releases.
 #https://github.com/atom/atom/releases/tag/v1.13.1
-
-git clone https://github.com/atom/atom.git
-Download atom-amd64.deb from the Atom releases page.
+mkdir Additions\ to\ Wasta\ Linux/github-tools
+git clone https://github.com/atom/atom.git ~/Additions\ to\ Wasta\ Linux/github-tools
+# Download atom-amd64.deb from the Atom releases page.
+wget http://atom.io/download/deb ~/Additions\ to\ Wasta\ Linux/github-tools
 
 #Run sudo dpkg --install atom-amd64.deb on the downloaded package.
 
-sudo dpkg --install atom-amd64.deb
-
+sudo dpkg --install ~/Additions\ to\ Wasta\ Linux/github-tools/atom-amd64.deb
+mv
 # After installing atom, install WordPress dictionary and other plugins to make cool things happen.
-apm install wordpress-dictionary
-apm install nord-atom-ui
-apm install nord-atom-syntax
-apm install file-icons
-apm install markdown-pdf
-apm install hyperclick
-apm install git-pear
-apm install autocomplete-python
-apm install wordpress-api
-apm install drupal
-apm install atom-drupal-api
-apm install language-regexp
-apm install regex-filter-and-generator
-apm install wordpress-suite
+# apm install wordpress-dictionary
+# apm install nord-atom-ui
+# apm install nord-atom-syntax
+# apm install file-icons
+# apm install markdown-pdf
+# apm install hyperclick
+# apm install git-pear
+# apm install autocomplete-python
+# apm install wordpress-api
+# apm install drupal
+# apm install atom-drupal-api
+# apm install language-regexp
+# apm install regex-filter-and-generator
+# apm install wordpress-suite
 
-
-
+apm install nord-atom-ui nord-atom-syntax file-icons drupal wordpress-api wordpress-dictionary autocomplete-python git-pear hyperclick markdown-pdf
 
 ####################4. iOS access ######################
 #We take photos with our iOS devices and want to access those photos to write our newsletters.
@@ -214,7 +261,7 @@ sudo apt install libimobiledevice-utils
 
 sudo apt-get install ideviceinstaller python-imobiledevice libimobiledevice-utils libimobiledevice4 libplist2 python-plist ifuse
 
-mkdir github-tools
+
 git clone https://github.com/libimobiledevice/libplist.git github-tools
 ./github-tools/libplist/autogen.sh
 make -C /github-tools/libplist
@@ -275,8 +322,13 @@ sudo make install -C /github-tools/teckit
 #ELAN Will need a bit of work each time as no official repo exists. We will use wget to get several different parts. (Application, Maual, etc.)
 #Install ELAN 5.0.0
 wget http://www.mpi.nl/tools/elan/ELAN_5-0-0-alpha_linux.bin
-#Install ELAN Manual
+sudo chmod +x ./ELAN_5-0-0-alpha_linux.bin
+./ELAN_5-0-0-alpha_linux.bin
+#Then click through the installer. I installed to default location, but I am not sure where else things should go...
+
+#Install ELAN Manual and tutorials.
 wget http://www.mpi.nl/corpus/manuals/manual-elan.pdf
+
 
 #Install QT
 
@@ -310,6 +362,61 @@ sudo apt-get install easytag
 Connect with other linux users here: https://wiki.debian.org/DebianGis
 
 #Install QGIS
+#Edit /etc/apt/sources.list to inculde the following per instructions from the qgis Website. http://qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
+# #Added by hugh on 9 Feb 2016 for qgis
+#  dep http://qgis.org/ubuntugis xenial main
+# # deb-src http://qgis.org/ubuntugis xenial main
+#  deb http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu xenial  main
+
+sudo apt-get update
+sudo apt-get install qgis python-qgis qgis-plugin-grass
+
+
+# Add the lines for one of the repositories to your /etc/apt/sources.list:
+#
+# deb     *repository* *codename* main
+# deb-src *repository* *codename* main
+#
+# Example latest release for Debian jessie:
+#
+# deb     http://qgis.org/debian jessie main
+# deb-src http://qgis.org/debian jessie main
+#
+# If you use one of our ubuntugis based repositories you also need to add following line:
+#
+# deb     http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu *codename* main
+#
+# After that type:
+#
+# sudo apt-get update
+# sudo apt-get install qgis python-qgis qgis-plugin-grass
+#
+# Note
+#
+# Please remove all the QGIS and GRASS packages you may have installed from other repositories before doing the update.
+#
+# In case of keyserver errors add the qgis.org repository public key to your apt keyring, type:
+#
+# wget -O - http://qgis.org/downloads/qgis-2016.gpg.key | gpg --import
+# gpg --fingerprint 073D307A618E5811
+#
+# Should output:
+#
+# pub   2048R/618E5811 2016-08-17 [expires: 2017-08-17]
+#       Key fingerprint = 942D 6AD5 DF3E 75DE A9AF  72B2 073D 307A 618E 5811
+# uid                  QGIS Archive Automatic Signing Key (2016) <qgis-developer@lists.osgeo.org>
+# sub   2048R/D34A963D 2016-08-17
+#
+# After you have verified the fingerprint you can add the key to apt with:
+#
+# gpg --export --armor 073D307A618E5811 | sudo apt-key add -
+#
+# Alternatively you can download the key from a keyserver and add the key to apt in one go (without manual fingerprint verification):
+#
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 073D307A618E5811
+
+
+
 #Install GRAASS
 
 #Install GPS Babble
@@ -532,3 +639,15 @@ get and install several of xnview tools from http://www.xnview.com/en/nconvert/
 
 
 https://vc.wpbakery.com/
+
+
+I also edited
+vim /etc/pulse/default.pa
+#Edits by Hugh Paterson on 25 jan 2017
+#From http://askubuntu.com/questions/223136/pavucontrol-doesnt-show-bluetooth-headset
+load-module module-bluetooth-discover
+load-module module-switch-on-connect
+Then commented out, as all this seemed to do was to mute my own speakers.
+
+sudo apt-get install avahi-discover
+sudo apt-get install art-of-reading
