@@ -5,8 +5,7 @@
 # Version: 0.01
 # License: GPL
 # Dependencies: git, make. /github-tools folder
-
-#work left 1) dependency check, 2) install folder correction
+# Remaining work: 1) dependency check, 2) install folder correction 3) address photo install optoins.
 
 
 sudo apt install libimobiledevice-utils
@@ -23,3 +22,5 @@ sudo make install -C /github-tools/libusbmuxd
 
 
 #Make other users on the computer able to view the idevice by editing the /etc/fuse.conf file. Uncomment last line of the file.
+
+#To also approach the photo shareing solution space. There is an app which uses Wi-Fi called: Photo Transfer App. This is available on chromium via the google store. It is avaible for android, and for iOS. This could be a rapid way to collect images.
