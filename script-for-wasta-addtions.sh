@@ -1,6 +1,4 @@
 #!/bin/bash
-
-#!/bin/bash
 ################################################################################
 # Script Name: wasta-data-scientist.bash
 # Authors: Hugh Paterson III <email here>
@@ -65,162 +63,34 @@
 ##################### 1. Behavior, Look, and Feel #####################
 source sections/look-and-feel.bash
 
+##################### 1b. Additional system tools #####################
+source sections/system-tools.bash
+
 #####################2. Fonts and some character tools #####################
-### Let's install the KDE Character selector to find the right unicode character. The KDE interaction around character selection is not as clean or clear as on OS X, but is much better than the GNOME interface which ships with unity. ###
-sudo apt-get install kcharselect
+source sections/fonts-and-characters.bash
 
 #####################3. Install apache web based Devtools ####################
 #Apache2 comes preinstalled. check out http://0.0.0.0 in the browser.
 #We might want to edit our files.
 
-#I use Wordpress a lot so lets get that
-
-mkdir ~/Sites/WordPress
-wget https://www.wordpress.org/latest.zip ~/Sites/WordPress
-unzip ~/Sites/WordPress/latest.zip
-#Now lets control wordpress and the installation via the commandline. We use the officially sanctioned tool from: http://wp-cli.org/
-#That way we can use wp plugin install <plugin-slug> and we’ll get the latest version of the list of plugins we want.
-
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-chmod +x wp-cli.phar
-sudo mv wp-cli.phar /usr/local/bin/wp
-
-# We could have downloaded a .deb pacage from github too. But I like the curl method.
-# https://github.com/wp-cli/builds/tree/gh-pages/deb
-
-#We will also download and install an autocompletion script for the bash termnial. instruction here: https://make.wordpress.org/cli/handbook/installing/#tab-completions
-wget https://github.com/wp-cli/wp-cli/raw/master/utils/wp-completion.bash
-#I'm going to put it in the same folder folder as wp--cli.phar only because they are related and am not experience with where to put things like this and there were no specific instructions.
-sudo mv wp-completion.bash /usr/local/bin/wp-completion.bash
-# We do need to echo a source for this to our .bashrc
-
-#Added by Hugh to make the wordpress bash completion script work.
-echo 'source /usr/local/bin/wp-completion.bash' >> ~/.bashrc
-
-#Then we need to make sure that the .bashrc file is updated by the current user secession.
-source ~/.bashrc
-
-#Now lets get the best themes and plugins for a variety of purposes
-#Let's start with a few additional commands for WordPress CLI.
-#Various composer dependencies will be added. I really don't know much about composer.
-wp package install git@github.com:runcommand/hook.git #WP-CLI Example
-wp package install runcommand/find-unused-themes #https://runcommand.io/wp/find-unused-themes/
-#wp package install boonebgorges/wp-cli-git-helper #https://github.com/boonebgorges/wp-cli-git-helper There is a conflic with this one and several features. Bug report filed.
-wp package install iandunn/wp-cli-plugin-active-on-sites #https://github.com/iandunn/wp-cli-plugin-active-on-sites
-wp package install boonebgorges/wp-cli-buddypress #https://github.com/boonebgorges/wp-cli-buddypress
-wp package install sinebridge/wp-cli-about #https://github.com/sinebridge/wp-cli-about
-wp package install sebastiaandegeus/wp-cli-salts-command #https://github.com/sebastiaandegeus/wp-cli-salts-command
-wp package install trepmal/blog-extractor #https://github.com/trepmal/blog-extractor
-wp package install timhysniu/wp-cli-template #https://github.com/timhysniu/wp-cli-template
-wp package install trepmal/wp-revisions-cli #https://github.com/trepmal/wp-revisions-cli
-wp package install wp-cli/admin-command #https://github.com/wp-cli/admin-command
-wp package install wp-cli/wp-super-cache-cli #https://github.com/wp-cli/wp-super-cache-cli
-wp package install runcommand/assign-featured-images #https://runcommand.io/wp/assign-featured-images/
-wp package install miya0001/wp-cli-vhosts:@stable #https://github.com/miya0001/wp-cli-vhosts
-wp package install mikedance/wp-cli-favorite-plugins #https://github.com/mikedance/wp-cli-favorite-plugins
-wp package install pressbooks/pb-cli #https://github.com/pressbooks/pb-cli/
-wp package install wp-cli/scaffold-package-command #https://github.com/wp-cli/scaffold-package-command
-wp package install 10up/mu-migration #https://github.com/10up/MU-Migration
-wp package install pulsestorm/wp-static-html-output-plugin #https://github.com/astorm/wp-static-html-output-plugin
-
-wp plugin install pods
-
-
-wget https://downloads.wordpress.org/plugin/pods.2.6.8.zip
-wget https://downloads.wordpress.org/plugin/filters.0.4.zip
-
-#Updating all of our plugins to the latest version is just as simple as this command.
-
-##wp plugin update --all
-
-#If the plugin is not in the wordpress repo then WP-CLI can not automatically get it. So we will need to use git.
-git clone https://github.com/pods-framework/pods.git
-git clone https://github.com/Webonary/sil-dictionary-webonary.git
-git clone https://github.com/pressbooks/pressbooks.git
-#I use homebrew on OS X. I am familure with that packaging system so let's use linuxbrew and get some useful tools. (Of course this is linux so if a tool exists via apt-get then we should try and get it from there first. However, sometimes it is better to not mess with the OS's version of something and leave that in place and use a different version of things, also sometimes homebrew repos get updated faster than apt-get repos do.)
+source sections/wordpress-world.bash
+source sections/drupal-world.bash
+source sections/web-tools.bash
 
 
 #Let's get RStudio and tools
 
+# Istall Rstudio and shiny packages
+#See documentation here: https://www.rstudio.com/products/shiny/download-server/
+#Shiny is a webapp deployment package for deploying web aps built in R. https://shiny.rstudio.com/
+#Rstudio is a package for managing R Scripts. R is a language for running statistical analysis on data.
+sudo apt-get install r-base
+sudo su - \
+-c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
 
-#Linuxbrew
-#Why linux brew?
-#       *  Can install software to a home directory and so does not require sudo.
-#       *  Install software not packaged by the native distribution.
-#       *  Install up-to-date versions of software when the native distribution is old.
-#       *  Use the same package manager to manage both your Mac and Linux machines.
-
-sudo apt install ruby
-sudo ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-PATH="$HOME/.linuxbrew/bin:$PATH"
-
-#Some of the commands are going to be dulpicated be cause they are copppied from various sources.
-sudo apt-get install build-essential curl git python-setuptools ruby
-
-#Actually these should be to ~/.bashrc because that is what wasta uses.
-#echo 'export PATH="$HOME/.linuxbrew/bin:$PATH"' >>~/.bash_profile
-#echo 'export PATH="/home/greenlantern/.linuxbrew/bin:$PATH"' >> ~/.bash_profile
-sudo apt install linuxbrew-wrapper
-
-sudo sudo apt-get install -y build-essential make cmake scons curl git \
-                               ruby autoconf automake autoconf-archive \
-                               gettext libtool flex bison \
-                               libbz2-dev libcurl4-openssl-dev \
-                               libexpat-dev libncurses-dev
-
-#Let's add some homebrew equiivlenets of PPAs
-brew tap josegonzalez/homebrew-php
-brew tap homebrew/science
-brew tap homebrew/services
-brew tap homebrew/apache
-brew tap homebrew/games
-brew install openssl #Security #
-brew install mysql #to make wordpress work
-
-# We've installed your MySQL database without a root password. To secure it run:
-#     mysql_secure_installation
-#
-# To connect run:
-#     mysql -uroot
-#
-# A "/etc/mysql/my.cnf" from another install may interfere with a Homebrew-built
-# server starting up correctly.
-brew install phpmyadmin3
-# Webserver configuration example (add this at the end of
-# your /etc/apache2/httpd.conf for instance) :
-#   Alias /phpmyadmin3 /home/greenlantern/.linuxbrew/share/phpmyadmin3
-#   <Directory /home/greenlantern/.linuxbrew/share/phpmyadmin3/>
-#     Options Indexes FollowSymLinks MultiViews
-#     AllowOverride All
-#     <IfModule mod_authz_core.c>
-#       Require all granted
-#     </IfModule>
-#     <IfModule !mod_authz_core.c>
-#       Order allow,deny
-#       Allow from all
-#     </IfModule>
-#   </Directory>
-# Then, open http://localhost/phpmyadmin3
-#
-# More documentation : file:///home/greenlantern/.linuxbrew/Cellar/phpmyadmin3/3.5.8.2/share/phpmyadmin3/doc/
-#
-# Configuration has been copied to /home/greenlantern/.linuxbrew/etc/phpmyadmin3.config.inc.php
-# Don't forget to:
-#   - change your secret blowfish
-#   - uncomment the configuration lines (pma, pmapass ...)
-
-
-# If we brew apache then:
-# After installing httpd22 or httpd24, the configuration files will be in $(brew --prefix)/etc/apache2/2.2 and $(brew --prefix)/etc/apache2/2.4, respectively.
-
-
-sudo apt install nodejs-legacy
-sudo apt install nodejs
-brew install nodejs
-
-# brew list:
-# bzip2  csv-fix	expat	  gpatch  icu4c    libpng  ncurses    node     patchelf     pkg-config	xz	zlib
-# cmake  curl	freetype  hello   libedit  mysql   ninvaders  openssl  phpmyadmin3  tree	yetris
+sudo apt-get install gdebi-core
+wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.1.834-amd64.deb
+sudo gdebi shiny-server-1.5.1.834-amd64.deb
 
 #It is a fine linke between good tools for writing and good tools for witing in Markdown and food tools for programing. Atom is good in all these ways. Let's git it and some supporting tools.
 #Atom is only available for 64-bit Linux systems.
@@ -257,64 +127,11 @@ apm install nord-atom-ui nord-atom-syntax file-icons drupal wordpress-api wordpr
 ####################4. iOS access ######################
 #We take photos with our iOS devices and want to access those photos to write our newsletters.
 
-sudo apt install libimobiledevice-utils
-
-sudo apt-get install ideviceinstaller python-imobiledevice libimobiledevice-utils libimobiledevice4 libplist2 python-plist ifuse
-
-
-git clone https://github.com/libimobiledevice/libplist.git github-tools
-./github-tools/libplist/autogen.sh
-make -C /github-tools/libplist
-sudo make install -C /github-tools/libplist
-git clone https://github.com/libimobiledevice/libusbmuxd.git
-./github-tools/libusbmuxd/autogen.sh
-make -C /github-tools/libusbmuxd
-sudo make install -C /github-tools/libusbmuxd
-
-
-#Make other users on the computer able to view the idevice by editing the /etc/fuse.conf file. Uncomment last line of the file.
+source sections/ios-access.bash
 
 #####################5. Software by SIL #####################
 
-#INSTALL SIL XLingPaper
-
-#get XMLMind Editor
-wget http://www.xlingpaper.org/wp-content/uploads/installers/xmlmindxxe5.3/xxe-perso-5_3_0.tar.gz
-
-sudo ln -s ./xxe-perso-5_3_0.tar.gz /usr/local/bin/xxe
-
-#get XLingPaper
-wget http://www.xlingpaper.org/wp-content/uploads/installers/linux/XLingPaper-2-29-0FullSetup.tar.gz
-sudo ./install
-
-#Install Java for XLingPaper
-##The current commands on the XLingPaper Website do not seem to work. Sun Java is prefered.
-##Advertised commands are: sudo apt-get install sun-java6-jre sun-java6-plugin sun-java6-fonts
-##Sun has removed Java from the Ubuntu repository and other sources of Java are required.
-##It seems that one must have an account with Oracle to download Java 6.45 from their archive. Rather than going through that method I have found the following repository and pull Java from it.
-
-sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-
-###XLingPaper currently requires Java 6
-sudo apt-get install oracle-java6-installer
-
-#Install FLEx
-sudo apt-get install fieldworks
-#Install WeSay
-sudo apt-get install wesay
-
-#Let's get some SIL text converters and other kinds of scripts...
-#Install TECkit
-git clone https://github.com/silnrsi/teckit.git ~/github-tools
-./github-tools/teckit/autogen.sh
-make -C /github-tools/teckit
-sudo make install -C /github-tools/teckit
-#Install CharacterCount
-* wget http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=UnicodeCCountPL_v0_3&filename=UnicodeCCount-0_3.zip
-#Let's get all the SIL Fonts
-
+source sections/sil-linguistic-software.bash
 
 #####################6. Non-SIL Software for Linguistics and the data scientist #####################
 ##Check this community for more content: https://wiki.debian.org/DebianScience/
@@ -342,13 +159,6 @@ git clone https://github.com/adamb924/ElanCheck.git
 #Let's get a sheetswiper like tool
 git clone https://github.com/stefanocoretta/sfm-exporter.git
 
-#####################7. We Need some Fun Stuff too #####################
-sudo apt-get install pioneers
-git clone https://github.com/farin/JCloisterZone.git
-brew install spaceinvaders-go
-brew install yetris
-
-
 ##Install tools for working with Audio files and with Audio in Linguistics ##
 
 #Install Praat 64 bit
@@ -369,7 +179,7 @@ Connect with other linux users here: https://wiki.debian.org/DebianGis
 #  deb http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu xenial  main
 
 sudo apt-get update
-sudo apt-get install qgis python-qgis qgis-plugin-grass
+#sudo apt-get install qgis python-qgis qgis-plugin-grass
 
 
 # Add the lines for one of the repositories to your /etc/apt/sources.list:
@@ -538,19 +348,6 @@ Lists of lingustically related modules:
 * https://libraries.io/search?keywords=linguistics&languages=Python
 
 
-# Istall Rstudio and shiny packages
-#See documentation here: https://www.rstudio.com/products/shiny/download-server/
-#Shiny is a webapp deployment package for deploying web aps built in R. https://shiny.rstudio.com/
-#Rstudio is a package for managing R Scripts. R is a language for running statistical analysis on data.
-sudo apt-get install r-base
-sudo su - \
--c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
-
-sudo apt-get install gdebi-core
-wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.1.834-amd64.deb
-sudo gdebi shiny-server-1.5.1.834-amd64.deb
-
-
 #Install some phylogenetic tree software
 http://www.math.canterbury.ac.nz/bio/pages/PhyloFiles/software.html
 
@@ -635,9 +432,6 @@ sudo apt-get update
 sudo apt-get install uberwriter
 get and install several of xnview tools from http://www.xnview.com/en/nconvert/
 
-
-
-
 https://vc.wpbakery.com/
 
 
@@ -651,3 +445,6 @@ Then commented out, as all this seemed to do was to mute my own speakers.
 
 sudo apt-get install avahi-discover
 sudo apt-get install art-of-reading
+
+#####################8. We Need some Fun Stuff too #####################
+source sections/smart-games.bash
