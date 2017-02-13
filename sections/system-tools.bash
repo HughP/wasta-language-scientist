@@ -39,3 +39,23 @@ brew tap homebrew/services
 brew tap homebrew/apache
 brew tap homebrew/games
 brew install openssl #Security #
+
+#Install git gui tools and file diff checking tools
+sudo apt install kdiff3
+sudo apt-get install gitk
+sudo apt-get install git-gui
+
+#Install WineHQ
+sudo apt-get install wine
+
+#Install QT
+
+
+#Get QT apps code, complie code.
+
+#Install VirtualBox
+
+#Tree - A nice tree drawing application for terminal which will draw trees of your directory structure.
+sudo apt install tree
+#install Kate a better text editor
+sudo apt install kate
