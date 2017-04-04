@@ -19,6 +19,7 @@ git clone https://github.com/libimobiledevice/libusbmuxd.git
 ./github-tools/libusbmuxd/autogen.sh
 make -C /github-tools/libusbmuxd
 sudo make install -C /github-tools/libusbmuxd
+#There was a way to view the device with ideviceinfo, some how I was able to register the device to the mahine and then things started working. Becky's phone did not go through the same stepts... Not sure what I did or didn't do.
 
 
 #Make other users on the computer able to view the idevice by editing the /etc/fuse.conf file. Uncomment last line of the file.

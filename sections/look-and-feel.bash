@@ -52,3 +52,9 @@ sudo apt-get install slingscold
 #sudo add-apt-repository ppa:noobslab/macbuntu
 #sudo apt-get update
 sudo apt-get install albert
+
+#Maybe
+#https://help.ubuntu.com/community/OSXApplicationsEquivalents
+#Read and follow:
+#https://niels.kobschaetzki.net/post/2014-07-24-switching-from-os-x-to-linux/
+#https://www.dyne.org/software/jaro-mail/

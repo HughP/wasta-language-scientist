@@ -13,6 +13,7 @@
 #       *  Install software not packaged by the native distribution.
 #       *  Install up-to-date versions of software when the native distribution is old.
 #       *  Use the same package manager to manage both your Mac and Linux machines.
+sudo apt install linuxbrew-wrapper #http://manpages.ubuntu.com/manpages/xenial/man7/linuxbrew-wrapper.7.html :: http://packages.ubuntu.com/xenial/utils/linuxbrew-wrapper
 
 sudo apt install ruby
 sudo apt-get install build-essential curl git python-setuptools ruby
@@ -30,7 +31,7 @@ PATH="$HOME/.linuxbrew/bin:$PATH"
 #echo '#Added by wasta-data-scientist script durring the install of linuxbrew' >> ~/.bashrc
 #echo 'export PATH="$HOME/.linuxbrew/bin:$PATH"' >> ~/.bashrc
 #echo 'export PATH="/home/greenlantern/.linuxbrew/bin:$PATH"' >> ~/.bashrc
-sudo apt install linuxbrew-wrapper
+
 
 #Let's add some homebrew equiivlenets of PPAs
 brew tap josegonzalez/homebrew-php
@@ -44,6 +45,7 @@ brew install openssl #Security #
 sudo apt install kdiff3
 sudo apt-get install gitk
 sudo apt-get install git-gui
+sudo apt install meld #http://meldmerge.org/
 
 #Install WineHQ
 sudo apt-get install wine
@@ -51,7 +53,7 @@ sudo apt-get install wine
 #Install QT
 
 
-#Get QT apps code, complie code.
+#Get QT apps code, compile code.
 
 #Install VirtualBox
 
@@ -59,3 +61,30 @@ sudo apt-get install wine
 sudo apt install tree
 #install Kate a better text editor
 sudo apt install kate
+
+#
+sudo apt-get install avahi-discover
+
+#For sharing
+sudo apt-get install samba
+
+#We need a proper browser let's get lynx for low bandwith areas
+sudo apt-get install lynx
+http://invisible-island.net/datafiles/release/lynx-cur.zip
+http://packages.ubuntu.com/search?keywords=lynx
+http://packages.ubuntu.com/xenial/lynx
+
+#lets set kdiff3 as the default git code review tool.
+git difftool --tool=kdiff3
+
+#Another console-terminal application
+sudo apt-get install konsole
+
+#Quicken Replacement
+sudo apt-get install gnucash
+
+#Moneydance is $40.00
+#For the language project using wxBanker might be a better option.
+
+install VirtualBox
+install

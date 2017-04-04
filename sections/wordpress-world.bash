@@ -183,10 +183,12 @@ https://www.npmjs.com/package/wordpress-rest-api
 https://wordpress.org/plugins/edit-flow/ https://downloads.wordpress.org/plugin/edit-flow.0.8.2.zip
 https://wordpress.org/plugins/taxonomy-switcher/
 
-
+wordpress plugin stream
 
 
 https://www.wpmayor.com/wordpress-themes-plugins-documentation/
 https://wptavern.com/wedocs-a-free-wordpress-documentation-theme-based-on-bootstrap
 
  git clone git https://github.com/github/platform-samples.git
+
+consult: https://perezbox.com/2012/06/installing-wordpress-via-terminal-and-securing-the-server/

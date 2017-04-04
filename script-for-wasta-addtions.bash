@@ -59,6 +59,7 @@
 # ├── WeSay
 # └── WritingSystems
 
+###Notes: sometimes there are scripts for
 
 ##################### 1. Behavior, Look, and Feel #####################
 source sections/look-and-feel.bash
@@ -77,20 +78,10 @@ source sections/wordpress-world.bash
 source sections/drupal-world.bash
 source sections/web-tools.bash
 
+#Let's get some R tools
+source sections/r-tools.bash
 
-#Let's get RStudio and tools
 
-# Istall Rstudio and shiny packages
-#See documentation here: https://www.rstudio.com/products/shiny/download-server/
-#Shiny is a webapp deployment package for deploying web aps built in R. https://shiny.rstudio.com/
-#Rstudio is a package for managing R Scripts. R is a language for running statistical analysis on data.
-sudo apt-get install r-base
-sudo su - \
--c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
-
-sudo apt-get install gdebi-core
-wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.1.834-amd64.deb
-sudo gdebi shiny-server-1.5.1.834-amd64.deb
 
 #It is a fine linke between good tools for writing and good tools for witing in Markdown and food tools for programing. Atom is good in all these ways. Let's git it and some supporting tools.
 #Atom is only available for 64-bit Linux systems.
@@ -107,6 +98,9 @@ wget http://atom.io/download/deb ~/Additions\ to\ Wasta\ Linux/github-tools
 sudo dpkg --install ~/Additions\ to\ Wasta\ Linux/github-tools/atom-amd64.deb
 mv
 # After installing atom, install WordPress dictionary and other plugins to make cool things happen.
+# apm install regex-railroad-diagram
+# apm install linter-write-good
+# apm install linter-just-say-no
 # apm install wordpress-dictionary
 # apm install nord-atom-ui
 # apm install nord-atom-syntax
@@ -121,8 +115,28 @@ mv
 # apm install language-regexp
 # apm install regex-filter-and-generator
 # apm install wordpress-suite
+# apm install pandoc-autocompile
+# apm install rst-preview-pandoc
+# apm install academic
+# apm install markdown-preview-plus
+# apm install language-pfm
+# apm install pdfify
+# apm install document-outline
+# apm install rst-preview
+# apm install autocomplete-bibtex
+# apm install zotero-picker
+# apm install zotero-citations
+# apm install pandoc #https://atom.io/packages/pandoc
+# apm install pandoc-convert
+# apm install asciidoc-preview
+# apm install language-asciidoc
+# apm install ascii-art
+# apm install asciidoctor-preview
+# apm install asciidoc-image-helper
+# apm install autocomplete-asciidoc
+# apm install asciidoc-assistant
 
-apm install nord-atom-ui nord-atom-syntax file-icons drupal wordpress-api wordpress-dictionary autocomplete-python git-pear hyperclick markdown-pdf
+apm install nord-atom-ui nord-atom-syntax file-icons drupal wordpress-api wordpress-dictionary autocomplete-python git-pear hyperclick markdown-pdf pandoc-autocompile pandoc-autocompile rst-preview-pandoc rst-preview pandoc-convert pandoc zotero-citations zotero-picker autocomplete-bibtex document-outline pdfify language-pfm markdown-preview-plus academic
 
 ####################4. iOS access ######################
 #We take photos with our iOS devices and want to access those photos to write our newsletters.
@@ -146,11 +160,6 @@ sudo chmod +x ./ELAN_5-0-0-alpha_linux.bin
 #Install ELAN Manual and tutorials.
 wget http://www.mpi.nl/corpus/manuals/manual-elan.pdf
 
-
-#Install QT
-
-#Get QT apps code, complie code.
-
 #Install ElanCheck
 git clone https://github.com/adamb924/ElanCheck.git
 #Intall FreeTranslator
@@ -161,114 +170,12 @@ git clone https://github.com/stefanocoretta/sfm-exporter.git
 
 ##Install tools for working with Audio files and with Audio in Linguistics ##
 
-#Install Praat 64 bit
-wget http://www.fon.hum.uva.nl/praat/praat6023_linux64.tar.gz
+#Praat and Praat tools moved to seperate file
+source sections/non-sil-linguistic-software.bash
 
-#embed metadata in Audio files
-sudo apt-get install kid3-qt
-sudo apt-get install easytag
+#Transcriber
 
-###Lets work with GIS Data in Linguistics ###
-Connect with other linux users here: https://wiki.debian.org/DebianGis
-
-#Install QGIS
-#Edit /etc/apt/sources.list to inculde the following per instructions from the qgis Website. http://qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
-# #Added by hugh on 9 Feb 2016 for qgis
-#  dep http://qgis.org/ubuntugis xenial main
-# # deb-src http://qgis.org/ubuntugis xenial main
-#  deb http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu xenial  main
-
-sudo apt-get update
-#sudo apt-get install qgis python-qgis qgis-plugin-grass
-
-
-# Add the lines for one of the repositories to your /etc/apt/sources.list:
-#
-# deb     *repository* *codename* main
-# deb-src *repository* *codename* main
-#
-# Example latest release for Debian jessie:
-#
-# deb     http://qgis.org/debian jessie main
-# deb-src http://qgis.org/debian jessie main
-#
-# If you use one of our ubuntugis based repositories you also need to add following line:
-#
-# deb     http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu *codename* main
-#
-# After that type:
-#
-# sudo apt-get update
-# sudo apt-get install qgis python-qgis qgis-plugin-grass
-#
-# Note
-#
-# Please remove all the QGIS and GRASS packages you may have installed from other repositories before doing the update.
-#
-# In case of keyserver errors add the qgis.org repository public key to your apt keyring, type:
-#
-# wget -O - http://qgis.org/downloads/qgis-2016.gpg.key | gpg --import
-# gpg --fingerprint 073D307A618E5811
-#
-# Should output:
-#
-# pub   2048R/618E5811 2016-08-17 [expires: 2017-08-17]
-#       Key fingerprint = 942D 6AD5 DF3E 75DE A9AF  72B2 073D 307A 618E 5811
-# uid                  QGIS Archive Automatic Signing Key (2016) <qgis-developer@lists.osgeo.org>
-# sub   2048R/D34A963D 2016-08-17
-#
-# After you have verified the fingerprint you can add the key to apt with:
-#
-# gpg --export --armor 073D307A618E5811 | sudo apt-key add -
-#
-# Alternatively you can download the key from a keyserver and add the key to apt in one go (without manual fingerprint verification):
-#
-# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 073D307A618E5811
-
-
-
-#Install GRAASS
-
-#Install GPS Babble
-#Install GPS Prune
-#Install QLandKarteGT
-
-Several really helpful tutorials for SVG Maps
-http://techslides.com/d3-world-maps-tooltips-zooming-and-queue/
-http://bost.ocks.org/mike/map/
-http://bl.ocks.org/mbostock
-
-http://geocommons.com/
-http://www.naturalearthdata.com/
-http://www.naturalearthdata.com/downloads/
-http://www.osgeo.org/
-
-
-Nigeria Map files Project (Blench map files)
-
-Correll Draw files --> Inscape/LibreOffice -->SVG --> Google Earth KML files
-
-
-Links to Consider:
-
-Support for KML & google map points
-	http://www.inkscapeforum.com/viewtopic.php?f=5&t=6129
-
-Converting GIS Vector Data to KML
-	https://developers.google.com/kml/articles/vector
-
-Exporting vector layer as kml in QGIS
-	http://pvanb.wordpress.com/2012/07/31/exporting-vector-layer-as-kml-in-qgis/
-
-Two Online Vector GIS/GPS/KML Conversion Utilities
-	http://freegeographytools.com/2008/two-online-vector-gisgpskml-conversion-utilities
-
-https://support.google.com/earth/answer/148103
-
-http://en.wikipedia.org/wiki/SK1_(program)
-http://wiki.inkscape.org/wiki/index.php/Frequently_asked_questions
-http://en.wikipedia.org/wiki/CorelDRAW
-
+source sections/cartography-gis-and-gps.bash
 
 ###Let's get some Academic reference and resource managment tools ###
 
@@ -312,40 +219,11 @@ install: https://github.com/zotero-manual/zotero-manual
 Print: https://zoteromusings.wordpress.com/
 
 #Install Calibre
-
-sudo apt-get install calibre
-
+source sections/calibre-world.bash
 
 ###Let's process and manage some data###
 #Install OpenRefine
 git clone https://github.com/OpenRefine/OpenRefine.git github-tools/
-
-#Install Spyder
-sudo apt-get
-
-#Python Modules for Lingusitics.....
-Some popular books include:
-
-    Think Python: how to Think Like a Computer Scientist. Alan B. Downey (2012). O’Reilly
-    Natural Language Processing with Python.Steven Bird, Ewan Klein & Edward Loper (2009) O’Reilly
-    Essential Python for Corpus Linguistics. Mark Johnson. Blackwell Publishers, Inc. Cambridge, MA, USA ©2010 ISBN:1405145633 9781405145633
-    Python Programming: An Introduction to Computer Science, First Edition, by John Zelle, Franklin Beedle & Associates publishers, 2003. ISBN: 978-1887902991 for python 2.x and second edn for python v. 3.x book resources: http://mcsp.wartburg.edu/zelle/python/
-
-#Modules:
-lingusitictagger: http://omz-software.com/pythonista/docs/ios/linguistictagger.html
-nltk: http://www.nltk.org/
-Scrapy: https://scrapy.org/  :: Scrapy Tutorial: https://blog.siliconstraits.vn/building-web-crawler-scrapy/
-pip install scrapy
-
-::Tutorial https://www.linguistics.rub.de/FallSchool/Courses/slides-python/slides-cavar.pdf
-
-lingpy Python Library for Historical Linguistics: http://lingpy.org more tools at: https://github.com/lingpy
-panlex_lite data from panlex https://github.com/nltk/nltk/issues/1253 via nltk
-corpus-downloader 0.1.11 : https://pypi.python.org/pypi/corpus-downloader/0.1.11
-
-Lists of lingustically related modules:
-* https://code.activestate.com/pypm/search:linguistics/
-* https://libraries.io/search?keywords=linguistics&languages=Python
 
 
 #Install some phylogenetic tree software
@@ -358,78 +236,23 @@ sudo hg clone https://bitbucket.org/neilb/csvfix
 #Install panDoc
 # http://pandoc.org/
 
+http://pencil.evolus.vn/
+http://pencil.evolus.vn/dl/evoluspencil_2.0.5_all.deb
 
+#Lets get Gephi and some gephi tools.
+source sections/gephi-world.bash
 
-#Install WineHQ
-
-sudo apt-get install wine
-
-#Install VirtualBox
-
-#Tree
-
-sudo apt install tree
-
-sudo apt install kate
+#Look at installing a graph database like:
+https://neo4j.com/
+#Get RDF Graph tools
 
 
 ############## Tools for dealing with those older Linguistic resources ##########
 
 #ScanTailor
-
 sudo apt-get install scantailor
 
 
-##Photo Processing for Language Documentation ##
-
-#Install DarkTable
-sudo apt-get install darktable
-
-#EXIFTOOL
-sudo apt-get install ruby-mini-exiftool
-
-wget http://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.40.tar.gz
-
-
-# #Unix Platforms
-#
-#     #Download the Image-ExifTool distribution from the ExifTool home page (The file you download will have a name like "Image-ExifTool-10.40.tar.gz".) Unpack the distribution and make it your current directory by typing:
-#
-#         cd <your download directory>
-#         gzip -dc Image-ExifTool-10.40.tar.gz | tar -xf -
-#         cd Image-ExifTool-10.40
-#
-#     #(At this point you may run exiftool by typing "exiftool <image file name>".) Test and install ExifTool by typing:
-#
-#         perl Makefile.PL
-#         make test
-#         sudo make install
-#
-#     (Note: The "make test" step is not required, but useful because it runs a full suite of tests to verify that ExifTool is working properly on your system. The "sudo make install" command requires that you have su access, and will prompt for your password. This will make ExifTool and its documentation accessible to all users on your system. If you don't have su access, you can run ExifTool in your own account by moving "exiftool" and its "lib" directory to any convienient location, preferably somewhere in your PATH.)
-#
-# You can now run exiftool by typing "exiftool". Also, you can consult the ExifTool documentation with commands like:
-#
-#     perldoc exiftool
-#     perldoc Image::ExifTool
-#     perldoc Image::ExifTool::TagNames
-#
-# or
-#
-#     man exiftool
-#     man Image::ExifTool
-#     man Image::ExifTool::TagNames
-#
-# Uninstalling
-#
-#     Type "sudo make uninstall" from the distribution directory.
-#     (Note: Unfortunately, newer systems may give an "Uninstall is unsafe and deprecated" message even though uninstalling ExifTool is safe because it has no dependencies. If this happens, the necessary commands to remove the installed files will be listed, and these commands must be run manually.)
-
-
-trying to install uber writer: http://uberwriter.wolfvollprecht.de/
-
-sudo add-apt-repository ppa:w-vollprecht/ppa
-sudo apt-get update
-sudo apt-get install uberwriter
 get and install several of xnview tools from http://www.xnview.com/en/nconvert/
 
 https://vc.wpbakery.com/
@@ -443,8 +266,17 @@ load-module module-bluetooth-discover
 load-module module-switch-on-connect
 Then commented out, as all this seemed to do was to mute my own speakers.
 
-sudo apt-get install avahi-discover
-sudo apt-get install art-of-reading
+
+#For Reading Experienments
+http://tedlab.mit.edu/~dr/Linger/
+
+#For corpus linguistics
+Corpus Linguistics for Grammar: A Guide for Research
+By Christian Jones, Daniel Waller
+wget: http://kb.ucla.edu/system/datas/5/original/content_analysis.pdf
 
 #####################8. We Need some Fun Stuff too #####################
 source sections/smart-games.bash
+
+###################9. Things to consider installing #####################
+source sections/potential-installs.bash

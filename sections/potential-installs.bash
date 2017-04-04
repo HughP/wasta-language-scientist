@@ -35,4 +35,53 @@
 
 
 #QGIS plugins
-* https://github.com/sagost/VideoUavTracker
+#* https://github.com/sagost/VideoUavTracker
+
+#SPARQL and RDR
+http://www.ldodds.com/projects/twinkle/
+http://franz.com/agraph/gruff/
+
+#Photo Transfer over wifi
+#Photo Transfer via chrome : https://chrome.google.com/webstore/detail/photo-transfer-app/fjfbkbdcdmafppmmeajldfnkjllemkej via http://phototransferapp.com/
+
+#Lets get some map data for your region of the wordpress-world
+* http://download.geofabrik.de/africa.html
+* http://www.geofabrik.de/data/geofabrik-osm-gis-standard-0.7.pdf
+
+#Think about things on this list: https://experimentalfieldlinguistics.wordpress.com/links/software/
+
+
+Try this list:
+https://www.linguistik.hu-berlin.de/en/institut-en/professuren-en/korpuslinguistik/links-en/software
+http://www.essex.ac.uk/linguistics/external/clmt/w3c/corpus_ling/content/software.html
+
+https://pypi.python.org/pypi/pyacoustid
+http://virtuallyhyper.com/2013/01/organizing-your-music-library-using-acoustic-fingerprinting/
+http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0144610
+http://hedges.belmont.edu/~shawley/SHAART/
+https://anaconda.org/pypi/acoustics
+
+Lots of stuff: http://homepage.ntu.edu.tw/~karchung/linguistics%20links.htm#gloss
+
+
+http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/
+
+https://gitlab.com/inkscape/inkscape-web.git
+https://gitlab.com/gitlab-org/gitlab-pages
+https://docs.gitlab.com/omnibus/README.html
+
+adam baker's materials
+https://github.com/adamb924/XSL-LD
+https://github.com/adamb924/AcousticWorkspace
+https://github.com/adamb924/FreeTranslator
+https://github.com/adamb924/FreeTranslator.git
+https://github.com/adamb924/AcousticWorkspace.git
+http://llacan.vjf.cnrs.fr/res_ELAN-CorpA_en.php
+
+i18n
+i10n
+http://wplang.org/translation-management-collaboration-platforms/
+PoEdit
+glotpress https://glotpress.blog/
+survey tool https://www.limesurvey.org/about-limesurvey/download
+transifex client https://docs.transifex.com/client/introduction

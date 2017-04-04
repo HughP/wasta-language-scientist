@@ -2,11 +2,11 @@
 _Some changes and additions to [Wasta Linux](https://github.com/wasta-linux) for the language and linguistic Scientist._
 
 ## Introduction
-This script attempts to document some changes (mostly additions) to Wasta for the linguistic data scientist.
+This script attempts to document some changes (additions) to Wasta for the linguistic data scientist.
 
 The reasons we want to use Wasta (and Linux are the following): We feel that there is great value in being on the same operating system with the indigenous language speaking (and using) members of our team. This equality could happen with any operating system. However, with Linux the cost of outfitting an entire team or part of a community with tools to make tools for their language is much lower than with OS X, or Windows. Wasta gives us the power of Ubuntu with the ease of access connect with SIL software systems.
 
-Wasta is at its core the minimum tools which might be needed by the minority language user who is just getting started with computing in their language. This script endeavors to bring the rest of what was forgotten (or intentionally left out). The new focus for this derivative of Wasta is on the modern interdisciplinary, digital humanities sensitive, anthropologically aware linguist, who is looking to enrich the lives and communities of minority language users (and digitally under-resourced) creatives.
+Wasta is at its core the minimum toolset needed by the minority language user who is just starting with computing in their language. This script endeavors to bring the rest of what was forgotten (or intentionally left out). The new focus for this derivative of Wasta is on the modern interdisciplinary, digital humanities sensitive, anthropologically aware linguist, who is looking to enrich the lives and communities of minority language users (and digitally under-resourced) creatives.
 
 Rather than providing a lean machine (as Wasta core does), we are looking at providing a grab and go solution with a health variety of tools pre-baked in.
 
@@ -172,3 +172,4 @@ These sections will follow the musings of the following five lists:
 * _[Ninvaders](http://ninvaders.sourceforge.net/)_ - A Space Invaders like game. - via brew
 
 ### Section 9
+This section has various potential installs not yet scripted or tested, but they look like they belong in the eco-system of tools we are using.

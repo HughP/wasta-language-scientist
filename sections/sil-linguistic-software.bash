@@ -35,12 +35,30 @@ sudo apt-get install fieldworks
 #Install WeSay
 sudo apt-get install wesay
 
+#Install the art of reading image library
+sudo apt-get install art-of-reading
+
+
+#Toolbox --- I hate this "tool" but many others have data in this format se we will get it so that we can "liberate" this data... because of this we are not going to be adding a lot of aux tools for toolbox.
+wget http://www.sil.org/computing/toolbox/Toolbox162.zip
+unzip Toolbox162.zip
+#http://www-01.sil.org/computing/toolbox/downloads.htm
+#One needs to manually run the installer.
+#Let's also ge the the transcriber importer
+wget www.sil.org/computing/toolbox/TranscriberImport.zip
+unzip TranscriberImport.zip
 #Let's get some SIL text converters and other kinds of scripts...
 #Install TECkit
 git clone https://github.com/silnrsi/teckit.git ~/github-tools
+#Sometimes this will have to be done from inside the folder.
 ./github-tools/teckit/autogen.sh
 make -C /github-tools/teckit
 sudo make install -C /github-tools/teckit
 #Install CharacterCount
 * wget http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=UnicodeCCountPL_v0_3&filename=UnicodeCCount-0_3.zip
 #Let's get all the SIL Fonts
+
+
+#Lets get the open office linguistic tools
+
+http://projects.palaso.org/projects/ooolt
