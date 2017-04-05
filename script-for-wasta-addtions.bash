@@ -4,9 +4,10 @@
 # Authors: Hugh Paterson III <email here>
 # Version: 0.01
 # License: GPL
-# Dependencies: None.
-# OS: Designed to work on wasta/Ubuntu read inline comments and README.md file.
+# Dependencies: 64 bit linux - we assume it is Wasta. Some installed packages might be 64 bit only nad some ppas might be added to Wasta already.
+# OS: Designed to work on Wasta/Ubuntu read inline comments and README.md file.
 # Target goal: A Wasta Linux version for the Linguistic Data Scientist (a version of the SIL consultant).
+# Expected use:  Start other scripts to install tools useful to linguists.
 
 # This script has a collection of sub-scripts. These sub-scripts can be run
 #independently or collectively in series by running the master script which ties
@@ -19,7 +20,7 @@
 # We create three new folders under '~/':
 #1. '~/Addititions to Wasta Linux' (code of applications and documentation goes here)
 #2. '~/Sites' (Web Site Development goes here)
-#3. '~/"User's Real Name"' where everything not specified via install scripts gets added and my personal folders/files are located. (All my crap goes here.)
+#3. '~/"User's Real Name"' where everything not specified via install scripts gets added and my personal folders/files are located. (All my crap goes here.) This saves my 'Documents' folder for other things. Generally I organize my content in my personal folder and I do this by project.
 
 #Now there are some other applications which create folders in the User's root. This script does not try to set a new default (and in some cases the applications do not allow for path modification).
 
@@ -59,7 +60,10 @@
 # ├── WeSay
 # └── WritingSystems
 
-###Notes: sometimes there are scripts for
+# We are going to make a subfolder into which to download all our various github acquistions. Now whenever we clone something which does not already have a specified location, we will put it in here.
+mkdir Additions\ to\ Wasta\ Linux/github-tools
+mkdir Additions\ to\ Wasta\ Linux/Manuals
+
 
 ##################### 1. Behavior, Look, and Feel #####################
 source sections/look-and-feel.bash
@@ -70,51 +74,67 @@ source sections/system-tools.bash
 #####################2. Fonts and some character tools #####################
 source sections/fonts-and-characters.bash
 
-#####################3. Install apache web based Devtools ####################
-#Apache2 comes preinstalled. check out http://0.0.0.0 in the browser.
-#We might want to edit our files.
+#####################3. Install web tools ####################
+# Install tools for hosting websites, install tools for making websites, and install tools for websites.
+# Apache2 comes preinstalled. check out http://0.0.0.0 in the browser.
+# We might want to edit our files.
 
-source sections/wordpress-world.bash
-source sections/drupal-world.bash
-source sections/web-tools.bash
+source sections/web/wordpress-world.bash
+source sections/web/drupal-world.bash
+source sections/web/web-tools.bash
 
-#Let's get some R tools
+# Let's get some R tools
+# The reason R is in this section is because there is a package for hosting R apps as websites. However, most R tools are for manipulating data. So this might also fit under the data tools section.
 source sections/r-tools.bash
 
+# It is a fine linke between good tools for writing and good tools for witing in Markdown and food tools for programing. Atom is good in all these ways. Let's get it and some supporting tools.
+# Atom is only available for 64-bit Linux systems.
+# Launch Atom from the terminal using the installed 'atom' command.
+# The Linux version of Atom does not currently automatically update so you will need to repeat these steps to upgrade to future releases.
 
-
-#It is a fine linke between good tools for writing and good tools for witing in Markdown and food tools for programing. Atom is good in all these ways. Let's git it and some supporting tools.
-#Atom is only available for 64-bit Linux systems.
-#Launch Atom using the installed 'atom' command.
-#The Linux version does not currently automatically update so you will need to repeat these steps to upgrade to future releases.
-#https://github.com/atom/atom/releases/tag/v1.13.1
-mkdir Additions\ to\ Wasta\ Linux/github-tools
-git clone https://github.com/atom/atom.git ~/Additions\ to\ Wasta\ Linux/github-tools
+# Reference Note: At the time of creation the following link references the current version of Atom https://github.com/atom/atom/releases/tag/v1.13.1 .
+# We could try to clone the github version, but I initially had trouble with that so I opted to download the .deb package.
+# If you want to clone the latest version un comment the following line. And comment out the wget line.
+# git clone https://github.com/atom/atom.git ~/Additions\ to\ Wasta\ Linux/github-tools
 # Download atom-amd64.deb from the Atom releases page.
 wget http://atom.io/download/deb ~/Additions\ to\ Wasta\ Linux/github-tools
 
-#Run sudo dpkg --install atom-amd64.deb on the downloaded package.
+# Run sudo dpkg --install atom-amd64.deb on the downloaded package.
 
 sudo dpkg --install ~/Additions\ to\ Wasta\ Linux/github-tools/atom-amd64.deb
-mv
-# After installing atom, install WordPress dictionary and other plugins to make cool things happen.
-# apm install regex-railroad-diagram
+
+# After installing atom, install WordPress dictionary and other plugins to make cool things happen when coding.
+
+# It seems that the following section should be aded to a seperate file and ran through a for each loop.
+
 # apm install linter-write-good
 # apm install linter-just-say-no
-# apm install wordpress-dictionary
+
 # apm install nord-atom-ui
 # apm install nord-atom-syntax
+
+# apm install ascii-art
+
+# apm install regex-railroad-diagram
+# apm install language-regexp
+# apm install regex-filter-and-generator
+
+# apm install wordpress-dictionary
+# apm install wordpress-api
+# apm install wordpress-suite
+
 # apm install file-icons
 # apm install markdown-pdf
 # apm install hyperclick
 # apm install git-pear
 # apm install autocomplete-python
-# apm install wordpress-api
+
 # apm install drupal
 # apm install atom-drupal-api
-# apm install language-regexp
-# apm install regex-filter-and-generator
-# apm install wordpress-suite
+
+# apm install linter-write-good
+# apm install linter-just-say-no
+
 # apm install pandoc-autocompile
 # apm install rst-preview-pandoc
 # apm install academic
@@ -130,7 +150,6 @@ mv
 # apm install pandoc-convert
 # apm install asciidoc-preview
 # apm install language-asciidoc
-# apm install ascii-art
 # apm install asciidoctor-preview
 # apm install asciidoc-image-helper
 # apm install autocomplete-asciidoc
@@ -148,132 +167,40 @@ source sections/ios-access.bash
 source sections/sil-linguistic-software.bash
 
 #####################6. Non-SIL Software for Linguistics and the data scientist #####################
-##Check this community for more content: https://wiki.debian.org/DebianScience/
+##Check the following communities for more content:
+# 1. https://wiki.debian.org/DebianScience/
+# 2. http://lingtransoft.info/apps/results
+# 3. http://hugh.thejourneyler.org/2013/software-needs-for-a-language-documentation-project/
+# 4. http://hugh.thejourneyler.org/2013/lexical-data-management-helps-with-sil-software/
+# 5. https://github.com/RichardLitt/endangered-languages
+# 6. http://emeld.org/school/toolroom/software/software-display.cfm
 
-#ELAN Will need a bit of work each time as no official repo exists. We will use wget to get several different parts. (Application, Maual, etc.)
-#Install ELAN 5.0.0
-wget http://www.mpi.nl/tools/elan/ELAN_5-0-0-alpha_linux.bin
-sudo chmod +x ./ELAN_5-0-0-alpha_linux.bin
-./ELAN_5-0-0-alpha_linux.bin
-#Then click through the installer. I installed to default location, but I am not sure where else things should go...
+# Let's get some Lingusitics specific tools
+source sections/non-sil-tools/non-sil-linguistic-software.bash
 
-#Install ELAN Manual and tutorials.
-wget http://www.mpi.nl/corpus/manuals/manual-elan.pdf
+# Let's get some cartography tools
+source sections/non-sil-tools/cartography-gis-and-gps.bash
 
-#Install ElanCheck
-git clone https://github.com/adamb924/ElanCheck.git
-#Intall FreeTranslator
-git clone https://github.com/adamb924/ElanCheck.git
+# Let's get some tools for the writing process
+source sections/non-sil-tools/academic-resources-and-writing.bash
 
-#Let's get a sheetswiper like tool
-git clone https://github.com/stefanocoretta/sfm-exporter.git
+# Let's get some tools for anthropology
+source sections/non-sil-tools/anthroplogy-resources.bash
 
-##Install tools for working with Audio files and with Audio in Linguistics ##
+# Let's get some tools for managing various kinds of media data
+source sections/non-sil-tools/audio-video-photo-editors.bash
 
-#Praat and Praat tools moved to seperate file
-source sections/non-sil-linguistic-software.bash
-
-#Transcriber
-
-source sections/cartography-gis-and-gps.bash
-
-###Let's get some Academic reference and resource managment tools ###
-
-install scrivner https://www.literatureandlatte.com/scrivener.php
-http://literatureandlatte.com/forum/viewtopic.php?f=33&t=32709
-
-Get SIL on board with this: http://citationstyles.org/publishers/
-
-#Install standalone Zotero and Zotfile, and LO plugins
-
-sudo apt-add-repository ppa:smathot/cogscinl
-sudo apt-get install zotero
-Also install Zotero plugins PDF-to-text
-and PDF-info which are seperate downloads
-
-git clone https://github.com/jlegewie/zotfile.git
-
-see: www.foolabs.com/xpdf/
-
-#Say yes/press enter to accept any requests.
-
-sudo apt-get update
-
-#wait for it to complete, then:
-
-sudo apt-get install zotero-standalone
-
-wget https://download.zotero.org/standalone/4.0.29.10/Zotero-4.0.29.10_linux-x86_64.tar.bz2
-wget https://download.zotero.org/integration/Zotero-LibreOffice-Plugin-3.5.12.xpi
-##http://zotfile.com/
-git clone https://github.com/jlegewie/zotfile.git
-wget https://github.com/jlegewie/zotfile/archive/master.zip
-
-rename zip file to .xpi
-
-wget https://addons.mozilla.org/firefox/downloads/file/420697/zotfile-4.2.6-fx.xpi
-
-install: https://github.com/emmareisz/zotpicknix
-
-install: https://github.com/zotero-manual/zotero-manual
-Print: https://zoteromusings.wordpress.com/
-
-#Install Calibre
-source sections/calibre-world.bash
+# Let's get Gephi and some gephi tools.
+source sections/non-sil-tools/gephi-world.bash
 
 ###Let's process and manage some data###
-#Install OpenRefine
+
+# Install OpenRefine
 git clone https://github.com/OpenRefine/OpenRefine.git github-tools/
 
-
-#Install some phylogenetic tree software
-http://www.math.canterbury.ac.nz/bio/pages/PhyloFiles/software.html
-
-#Install CSVfix and other commandline tools
+# Install CSVfix and other commandline tools
 
 sudo hg clone https://bitbucket.org/neilb/csvfix
-
-#Install panDoc
-# http://pandoc.org/
-
-http://pencil.evolus.vn/
-http://pencil.evolus.vn/dl/evoluspencil_2.0.5_all.deb
-
-#Lets get Gephi and some gephi tools.
-source sections/gephi-world.bash
-
-#Look at installing a graph database like:
-https://neo4j.com/
-#Get RDF Graph tools
-
-
-############## Tools for dealing with those older Linguistic resources ##########
-
-#ScanTailor
-sudo apt-get install scantailor
-
-
-get and install several of xnview tools from http://www.xnview.com/en/nconvert/
-
-https://vc.wpbakery.com/
-
-
-I also edited
-vim /etc/pulse/default.pa
-#Edits by Hugh Paterson on 25 jan 2017
-#From http://askubuntu.com/questions/223136/pavucontrol-doesnt-show-bluetooth-headset
-load-module module-bluetooth-discover
-load-module module-switch-on-connect
-Then commented out, as all this seemed to do was to mute my own speakers.
-
-
-#For Reading Experienments
-http://tedlab.mit.edu/~dr/Linger/
-
-#For corpus linguistics
-Corpus Linguistics for Grammar: A Guide for Research
-By Christian Jones, Daniel Waller
-wget: http://kb.ucla.edu/system/datas/5/original/content_analysis.pdf
 
 #####################8. We Need some Fun Stuff too #####################
 source sections/smart-games.bash

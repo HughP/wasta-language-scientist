@@ -4,7 +4,8 @@
 # Author: Hugh Paterson III <email here>
 # Version: 0.01
 # License: GPL
-# Dependencies: git, wget.
+# Dependencies: git, wget,
+# Dependencies of installed software: Java.
 
 #INSTALL SIL XLingPaper
 

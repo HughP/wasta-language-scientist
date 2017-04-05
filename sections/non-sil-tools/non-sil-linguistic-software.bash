@@ -1,3 +1,40 @@
+#!/bin/bash
+################################################################################
+# Script Name: system-tools.bash
+# Author: Hugh Paterson III <email here>
+# Version: 0.01
+# License: GPL
+# Dependencies: git, wget,
+# Dependencies of installed software: Java.
+
+# ELAN Will need a bit of work each time as no official repo exists (download URI for the latest version, though the developer suggests that this is possible). We will use wget to get several different parts. (Application, Maual, etc.)
+# Install ELAN 5.0.0
+wget http://www.mpi.nl/tools/elan/ELAN_5-0-0-alpha_linux.bin
+sudo chmod +x ./ELAN_5-0-0-alpha_linux.bin
+./ELAN_5-0-0-alpha_linux.bin
+#Then click through the installer. I installed to default location, but I am not sure where else things should go...
+
+#Install ELAN Manual and tutorials.
+wget http://www.mpi.nl/corpus/manuals/manual-elan.pdf
+
+#Install ElanCheck
+git clone https://github.com/adamb924/ElanCheck.git
+#Intall FreeTranslator
+git clone https://github.com/adamb924/FreeTranslator.git
+
+#Let's get a sheetswiper like tool
+git clone https://github.com/stefanocoretta/sfm-exporter.git
+
+#Transcriber
+
+#Install some phylogenetic tree software
+http://www.math.canterbury.ac.nz/bio/pages/PhyloFiles/software.html
+
+
+##Install tools for working with Audio files and with Audio in Linguistics ##
+
+#Praat and Praat tools moved to seperate file
+
 #Install Praat 64 bit
 wget http://www.fon.hum.uva.nl/praat/praat6023_linux64.tar.gz
 
@@ -84,3 +121,29 @@ http://sweet.artsrn.ualberta.ca/cdcox/cuped/
 http://www.eopas.org/
 git clone https://github.com/eopas/eopas.git
 https://github.com/nabu-catalog/nabu
+
+############## Tools for dealing with those older Linguistic resources ##########
+
+#ScanTailor
+sudo apt-get install scantailor
+
+
+get and install several of xnview tools from http://www.xnview.com/en/nconvert/
+
+https://vc.wpbakery.com/
+
+#For Reading Experienments
+http://tedlab.mit.edu/~dr/Linger/
+
+#For corpus linguistics
+Corpus Linguistics for Grammar: A Guide for Research
+By Christian Jones, Daniel Waller
+wget: http://kb.ucla.edu/system/datas/5/original/content_analysis.pdf
+
+
+http://pencil.evolus.vn/
+http://pencil.evolus.vn/dl/evoluspencil_2.0.5_all.deb
+
+# Look at installing a graph database like:
+https://neo4j.com/
+# Get RDF Graph tools
