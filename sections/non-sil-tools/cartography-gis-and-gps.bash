@@ -119,3 +119,14 @@ https://support.google.com/earth/answer/148103
 http://en.wikipedia.org/wiki/SK1_(program)
 http://wiki.inkscape.org/wiki/index.php/Frequently_asked_questions
 http://en.wikipedia.org/wiki/CorelDRAW
+
+
+#####
+Some tutorials I have found useful.
+Creating maps from images:
+https://gis.stackexchange.com/questions/16986/steps-to-creating-a-geotiff
+http://glaikit.org/2011/03/27/image-georeferencing-with-qgis/
+https://docs.qgis.org/2.6/en/docs/training_manual/complete_analysis/raster_to_vector.html
+
+Using Map Composer
+https://docs.qgis.org/2.2/en/docs/training_manual/map_composer/map_composer.html

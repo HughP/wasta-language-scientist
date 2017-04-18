@@ -24,3 +24,7 @@ drush init
 https://www.drupal.org/project/panopoly
 https://www.drupal.org/project/openatrium
 https://www.drupal.org/project/project_module/?solrsort=iss_project_release_usage%20desc&f[4]=sm_field_project_type%3Afull
+
+consider this: https://drupalize.me/videos/installing-drush-composer?p=1156
+http://docs.drush.org/en/master/install/
+https://pantheon.io/drupal-8/introduction-drush-and-drupal-console

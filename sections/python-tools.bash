@@ -210,3 +210,9 @@ https://plot.ly/python/
 CarioPlot
 http://matplotlib.org/
 http://matplotlib.org/faq/installing_faq.html#what-is-a-backend
+
+Tutorials:
+http://lope.linguistics.ntu.edu.tw/courses/python4nlp/
+https://experimentalfieldlinguistics.wordpress.com/links/software/python/
+https://www.nodebox.net/code/index.php/Linguistics
+https://corpuslinguisticmethods.wordpress.com/2014/02/14/query-a-text-corpus-with-python/

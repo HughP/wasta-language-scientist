@@ -192,3 +192,30 @@ https://wptavern.com/wedocs-a-free-wordpress-documentation-theme-based-on-bootst
  git clone git https://github.com/github/platform-samples.git
 
 consult: https://perezbox.com/2012/06/installing-wordpress-via-terminal-and-securing-the-server/
+
+
+####Consider these Wordpres tools
+https://wpcligui.com/
+https://www.smashingmagazine.com/2015/09/wordpress-management-with-wp-cli/
+https://make.wordpress.org/cli/handbook/tools/
+https://premium.wpmudev.org/blog/wordpress-development-wp-cli/
+#I was trying to store FLEx data in wordpress as a multidimentional array.
+https://www.alleyinteractive.com/news/large-custom-wordpress-content-migrations/
+https://github.com/gyrus/WordPress-Developers-Custom-Fields
+https://code.tutsplus.com/articles/mastering-wordpress-meta-data-understanding-and-using-arrays--wp-34596
+https://wordpress.stackexchange.com/questions/89884/how-to-store-post-meta-in-an-array
+https://en.bainternet.info/wordpress-taxonomies-extra-fields-the-easy-way/
+https://github.com/Automattic/custom-metadata
+https://code.tutsplus.com/articles/mastering-wordpress-meta-data-querying-posts-and-users-by-meta-data--wp-34606
+https://github.com/gyrus/WordPress-Developers-Custom-Fields
+https://github.com/wplib/wplib-box
+http://wpgear.org/
+
+Consider reading and using this script
+https://github.com/sm0k3net/WordPress/blob/master/wp_lamp_https.sh
+
+Resolve this comment:
+https://github.com/boonebgorges/wp-cli-git-helper/issues/10
+
+Code writting Tutorials
+* https://10up.github.io/Engineering-Best-Practices/php/

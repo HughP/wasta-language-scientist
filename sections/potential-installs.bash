@@ -85,3 +85,26 @@ PoEdit
 glotpress https://glotpress.blog/
 survey tool https://www.limesurvey.org/about-limesurvey/download
 transifex client https://docs.transifex.com/client/introduction
+
+in terminal
+git clone https://github.com/learningtapestry/lrmi-tagger.git
+
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable
+sudo apt install ruby-bundler
+gem install passenger
+
+
+If you get following error, when you try to start nginx…
+
+[emerg]: bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+Then it means nginx or some other process is already using port 80.
+
+You can kill it using:
+
+sudo fuser -k 80/tcp
+
+And then try restarting nginx again:
+
+service nginx start

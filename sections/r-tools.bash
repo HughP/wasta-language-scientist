@@ -167,3 +167,5 @@ $ sudo R CMD INSTALL fortunes_1.4-1.tar.gz
 
 
 http://allthingslinguistic.com/post/103840914592/praatr-an-r-package-for-controlling-praat
+
+https://www.rstudio.com/products/shiny/download-server/

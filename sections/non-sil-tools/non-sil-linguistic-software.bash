@@ -147,3 +147,47 @@ http://pencil.evolus.vn/dl/evoluspencil_2.0.5_all.deb
 # Look at installing a graph database like:
 https://neo4j.com/
 # Get RDF Graph tools
+
+
+
+#Variety fo tools at various links some of these tools need to be moved to github.
+
+* http://www.linguistics.ucla.edu/faciliti/sales/software.htm
+* http://www.phonetics.ucla.edu/
+* http://archive.phonetics.ucla.edu/
+* http://www.linguistics.ucla.edu/faciliti/facilities/acoustic/praat.html
+* http://www.en.phonetik.uni-muenchen.de/research/software/index.html
+* http://www.phon.ucl.ac.uk/resource/software.html
+* http://emdros.org/contact.html
+* https://github.com/emg
+* http://www.speech.kth.se/wavesurfer/index2.html
+## wavesurfer
+WaveSurfer is an Open Source tool for sound visualization and manipulation. It has been designed to suit both novice and advanced users. WaveSurfer has a simple and logical user interface that provides functionality in an intuitive way and which can be adapted to different tasks. It can be used as a stand-alone tool for a wide range of tasks in speech research and education. Typical applications are speech/sound analysis and sound annotation/transcription. WaveSurfer can also serve as a platform for more advanced/specialized applications. This is accomplished either through extending the WaveSurfer application with new custom plug-ins or by embedding WaveSurfer visualization components in Other applications.
+
+TLA-team: WaveSurfer can be used to visualize and analyze sound in several ways, e.g. Waveform, Spectorgram, Pitch, Power or Formant panes. Software usable for beginners and experts. Software can read WAV, AU, AIFF, MP3, CSL, and SD. Files can be saved in WAV, AU, AIFF.
+* https://sourceforge.net/projects/wavesurfer/
+* www.speech.kth.se/hat/
+
+EMU
+* https://tla.mpi.nl/tools2/tooltype/annotation/emu-speech-database-system-2/
+* http://emu.sourceforge.net/
+* http://ips-lmu.github.io/EMU.html
+
+
+Wikispeach
+* http://webapp.phonetik.uni-muenchen.de/wikispeech/
+
+Transa
+* https://tla.mpi.nl/tools2/tooltype/annotation/transana/
+* https://www.transana.com/
+
+CLARK
+* www.bultreebank.org/clark/
+
+Emdros
+* https://tla.mpi.nl/tools2/tooltype/annotation/emdros/#more-792
+* http://emdros.org/examples/HAL/1030.html
+
+
+Keyboards
+* https://tla.mpi.nl/tools2/tool_os/os/ipa-console/#more-926

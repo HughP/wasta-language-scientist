@@ -86,5 +86,70 @@ sudo apt-get install gnucash
 #Moneydance is $40.00
 #For the language project using wxBanker might be a better option.
 
-install VirtualBox
-install
+install VirtualBox #https://www.virtualbox.org/wiki/Linux_Downloads
+install vagrant: https://atlas.hashicorp.com/ubuntu/boxes/xenial64
+
+
+Not sure what I did about printing to the Brother HL-L2360DW
+I did this: from :: http://support.brother.com/g/s/id/linux/en/before.html?c=us&lang=en&prod=hll2360dw_us&redirect=on#004
+
+Pre-required Procedure (4)
+    Related distributions
+    Debian, Ubuntu
+    Related products/drivers
+    printer/PC-FAX drivers
+    Requirement (superuser authorization is required to run the command)
+    "mkdir /var/spool/lpd" command is required if the folder does not exist.
+
+And then I used the generic printer.
+
+This seems to be the driver: http://support.brother.com/g/b/downloadhowto.aspx?c=us&lang=en&prod=hll2360dw_us&os=128&dlid=dlf101123_000&flang=4&type3=10032
+
+
+
+    Download LPR driver.
+
+    Login as a superuser ( or use "sudo" option if required).
+
+    Check if pre-required procedures are completed
+    For Debian/Ubuntu 64bit
+
+    Install the driver.
+        Turn on the printer and connect the usb, network or parallel cable.
+        Go to the directory where the driver is.
+        Install LPR driver.The install process may take some time. Please wait until it is complete.
+        Command  :  dpkg -i --force-all  (lpr-drivername)
+        Check if the LPR driver is installed.
+        Command  :  dpkg -l  |  grep  Brother
+
+    Confirm/Configure a file according to your connection.
+
+        Check the configuration filename for your distribution.
+        Example:
+        openSUSE, Ubuntu, Debian : /etc/printcap
+        Redhat, fedora, Mandriva : /etc/printcap.local
+
+        Edit the file according to your connection.
+        For USB Connection (Default)
+        Check if the parameter of ":lp" is ":lp=/dev/usb/lp0"
+        For Network Connection
+        replace ":lp" line to the following 2 lines
+        :rm=(ip address of your printer)\
+        :rp=lp\
+        For Parallel Connection
+        replace ":lp" line to the following line
+        :lp=/dev/lp0\
+
+        Restart the print system.
+        Command  (for  lpr):  /etc/init.d/lpr  restart
+        Command  (for  lprng)  :  /etc/init.d/lprng  restart
+
+    Try a test print.
+
+See discussion here: https://askubuntu.com/questions/575500/brother-hl-l2360dw-printer-installation
+
+I never got the following instructions to work: http://support.brother.com/g/b/downloadhowto.aspx?c=us&lang=en&prod=hll2360dw_us&os=128&dlid=dlf006893_000&flang=4&type3=625
+
+Looking for an HTML t PDF solution:
+http://www.html2pdf.it/
+https://github.com/HughP/html2pdf.it
