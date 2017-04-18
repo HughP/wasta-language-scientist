@@ -4,7 +4,7 @@
 # Authors: Hugh Paterson III <email here>
 # Version: 0.01
 # License: GPL
-# Dependencies: 64 bit linux - we assume it is Wasta. Some installed packages might be 64 bit only nad some ppas might be added to Wasta already.
+# Dependencies: 64 bit Linux - we assume it is Wasta. Some installed packages might be 64 bit only nad some ppas might be added to Wasta already.
 # OS: Designed to work on Wasta/Ubuntu read inline comments and README.md file.
 # Target goal: A Wasta Linux version for the Linguistic Data Scientist (a version of the SIL consultant).
 # Expected use:  Start other scripts to install tools useful to linguists.
@@ -59,6 +59,13 @@
 # ├── Videos
 # ├── WeSay
 # └── WritingSystems
+
+
+#########Script coding conventions#######
+# 1. Commented out commands have no space between the hash sign and the first character of their command.
+#echo 'something nice'
+# Comments do have a space between the hash sign and the first character of their comment/note.
+# 2. the command 'apt-get install' is prefered over 'apt install' as this allows for easier compatability with other versions of Linux.
 
 # We are going to make a subfolder into which to download all our various github acquistions. Now whenever we clone something which does not already have a specified location, we will put it in here.
 mkdir Additions\ to\ Wasta\ Linux/github-tools
@@ -132,8 +139,7 @@ sudo dpkg --install ~/Additions\ to\ Wasta\ Linux/github-tools/atom-amd64.deb
 # apm install drupal
 # apm install atom-drupal-api
 
-# apm install linter-write-good
-# apm install linter-just-say-no
+apm install linter-shellcheck # https://github.com/AtomLinter/linter-shellcheck
 
 # apm install pandoc-autocompile
 # apm install rst-preview-pandoc

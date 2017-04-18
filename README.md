@@ -55,7 +55,7 @@ Wasta has two GUI interfaces. 1. Unity which ships with [Ubuntu](https://www.ubu
   (all via as indicated)
   * Make a directory for websites
   * [WordPress](https://www.wordpress.org/) -via wget.
-  * [WP-CLI](https://www.wp-cli.org/) (Commandline interface for WordPress). - via cURL.
+  * [WP-CLI](https://www.wp-cli.org/) (Command line interface for WordPress). - via cURL.
  https://apps.wordpress.com/d/linux-deb/ https://github.com/Automattic/wp-calypso
 
   * _[SIL Dictionary plugin](https://github.com/Webonary/sil-dictionary-webonary)_
