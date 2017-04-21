@@ -24,9 +24,12 @@ http://linguistics.uoregon.edu/infield2010/workshops/survey-methods/index.php
 sudo apt-get install kid3-qt
 sudo apt-get install easytag
 
+https://handbrake.fr/
+
 
 #Video Editors and Video Metadata Editors
 
+https://natron.fr/
 
 
 #Photo Editors and Photo Metadata Editors

@@ -65,7 +65,8 @@
 # 1. Commented out commands have no space between the hash sign and the first character of their command.
 #echo 'something nice'
 # Comments do have a space between the hash sign and the first character of their comment/note.
-# 2. the command 'apt-get install' is prefered over 'apt install' as this allows for easier compatability with other versions of Linux.
+# 2. The command 'apt-get install' is prefered over 'apt install' as this allows for easier compatability with other versions of Linux.
+# 3. The README.md file is created through doxygen. To get Doxygen to work with bash scripts the following sed based filter is used: https://github.com/Anvil/bash-doxygen
 
 # We are going to make a subfolder into which to download all our various github acquistions. Now whenever we clone something which does not already have a specified location, we will put it in here.
 mkdir Additions\ to\ Wasta\ Linux/github-tools

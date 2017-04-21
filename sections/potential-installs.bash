@@ -108,3 +108,40 @@ sudo fuser -k 80/tcp
 And then try restarting nginx again:
 
 service nginx start
+
+
+Plugins to think about installing:
+* https://github.com/tpope/vim-markdown
+* https://remarkableapp.github.io/linux/download.html
+* https://github.com/suan/vim-instant-markdown
+* http://pandoc.org/
+* http://www.math.canterbury.ac.nz/bio/pages/PhyloFiles/software.html
+* ab.inf.uni-tuebingen.de/software/splitstree4/
+
+Move MPI content to text generated through xlingpaper
+Then move the content to a Github Repo.
+* https://www.eva.mpg.de/lingua/tools-at-lingboard/questionnaires.php
+* https://www.degruyter.com/view/product/210877
+* https://www.eva.mpg.de/lingua/tools-at-lingboard/questionnaire/imperative-constructions_description.php
+* https://www.eva.mpg.de/lingua/tools-at-lingboard/questionnaire/unesco_survey_description.php
+* https://www.eva.mpg.de/lingua/tools-at-lingboard/questionnaire/figurative-language_description.php
+* https://www.eva.mpg.de/lingua/tools-at-lingboard/questionnaire/phonological-grammatical_description.php
+* https://www.eva.mpg.de/lingua/tools-at-lingboard/questionnaire/stress-typology_description.php
+* https://www.eva.mpg.de/lingua/tools-at-lingboard/questionnaire/eurotyp_description.php
+
+
+FLEx eco system:
+https://github.com/sillsdev/flashgrab
+
+Transcriber:
+https://github.com/eroux/transcriber-ag
+https://sourceforge.net/projects/transag/?source=typ_redirect
+
+More tools:
+http://linguisticdataservices.com/transcription_tools.html
+
+So that websites can rapidly import data:
+http://depts.washington.edu/sociolab/links.htm
+
+Dictionary system:
+https://sourceforge.net/projects/dict-system/?source=directory
