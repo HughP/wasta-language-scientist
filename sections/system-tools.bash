@@ -40,7 +40,7 @@ brew tap homebrew/services
 brew tap homebrew/apache
 brew tap homebrew/games
 
-# For security reasons I think it good to add an updated openSSL package. It is installed by default if you have connectivity problems you should remove it via linuxbrew. Note that openSSL is a package which Ubuntu uses, they just don'y upgrade to the latest version as soon as it comes out, so Wasta lags behind as it is also behind Ubuntu.#
+# For security reasons I think it good to add an updated openSSL package. It is installed by default if you have connectivity problems you should remove it via linuxbrew. Note that openSSL is a package which Ubuntu uses, they just don'y upgrade to the latest version as soon as it comes out, so Wasta lags behind as it is also behind Ubuntu.
 brew install openssl
 
 # Install git gui tools and file diff checking tools
@@ -82,7 +82,6 @@ sudo apt-get install avahi-discover
 
 # For sharing
 sudo apt-get install samba
-
 
 dmg2iso
 Peazip
@@ -168,8 +167,11 @@ Looking for an HTML t PDF solution:
 http://www.html2pdf.it/
 https://github.com/HughP/html2pdf.it
 
-#If you need another email solution other than thunderbird (which does have some drawbacks) then check out Jaro-Mail.
+# If you need another email solution other than thunderbird (which does have some drawbacks) then check out Jaro-Mail.
 # * https://www.dyne.org/software/jaro-mail/
 
 # A really cool bash script checker
 apt-get install shellcheck #https://github.com/koalaman/shellcheck#user-content-in-your-editor
+
+
+# Add this turotial: https://www.howtogeek.com/229699/how-to-uninstall-software-using-the-command-line-in-linux/
