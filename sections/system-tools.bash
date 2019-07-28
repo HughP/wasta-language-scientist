@@ -20,6 +20,9 @@ sudo apt-get install linuxbrew-wrapper
 # Read abpit why this is necessary here: http://manpages.ubuntu.com/manpages/xenial/man7/linuxbrew-wrapper.7.html :: http://packages.ubuntu.com/xenial/utils/linuxbrew-wrapper
 
 sudo apt-get install ruby
+# This was required to install Jykell
+sudo apt-get install ruby-dev
+# Back to what was needed for linuxbrew.
 sudo apt-get install build-essential curl git python-setuptools ruby
 sudo sudo apt-get install -y build-essential make cmake scons curl git ruby autoconf automake autoconf-archive gettext libtool flex bison libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev
 sudo ruby -e "$(curl -fsSL https://raw.githubusercontent.com/linuxbrew/install/master/install)"
@@ -65,6 +68,12 @@ Version 5
 
 #Get QT apps code, compile code.
 
+#WE might needs some special JAVA versions
+sudo apt-get install icedtea-8-plugin
+
+#Lets put in jq becase everyone needs to filter JSON content
+sudo apt-get install jq
+
 #Install VirtualBox
 sudo apt-get install VirtualBox
 
@@ -87,7 +96,7 @@ dmg2iso
 Peazip
 
 # We need a proper browser let's get lynx for low bandwith areas
-# Review this in my emials and see if there is not another one more
+# Review this in my emials and see if there is not another one more suited for the task as lynx has some security issues
 sudo apt-get install lynx
 http://invisible-island.net/datafiles/release/lynx-cur.zip
 http://packages.ubuntu.com/search?keywords=lynx
@@ -175,3 +184,10 @@ apt-get install shellcheck #https://github.com/koalaman/shellcheck#user-content-
 
 
 # Add this turotial: https://www.howtogeek.com/229699/how-to-uninstall-software-using-the-command-line-in-linux/
+
+Install Java 9
+sudo apt-get install oracle-java9-installer
+#http://www.webupd8.org/2015/02/install-oracle-java-9-in-ubuntu-linux.html
+#https://askubuntu.com/questions/740757/switch-between-multiple-java-versions
+Choose active Java version
+sudo update-alternatives --config java

@@ -130,3 +130,6 @@ https://docs.qgis.org/2.6/en/docs/training_manual/complete_analysis/raster_to_ve
 
 Using Map Composer
 https://docs.qgis.org/2.2/en/docs/training_manual/map_composer/map_composer.html
+
+install: https://earth.esa.int/web/guest/eoli/release-notes/content/-/article/eolisa-video-tutorial
+And grab the tutorial video.

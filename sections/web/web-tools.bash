@@ -54,3 +54,8 @@ brew install nodejs
 
 Tutorials:
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu
+
+Should install this: https://github.com/RichardLitt/generator-standard-readme
+https://github.com/RichardLitt/generator-standard-readme.git
+https://github.com/RichardLitt/gh-description
+https://github.com/RichardLitt/gh-description.git

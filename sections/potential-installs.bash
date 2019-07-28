@@ -41,6 +41,9 @@
 http://www.ldodds.com/projects/twinkle/
 http://franz.com/agraph/gruff/
 
+#Notes and Zotero helps
+http://www.cogsci.nl/qnotero#gnote-integration-linux-only
+
 #Photo Transfer over wifi
 #Photo Transfer via chrome : https://chrome.google.com/webstore/detail/photo-transfer-app/fjfbkbdcdmafppmmeajldfnkjllemkej via http://phototransferapp.com/
 
@@ -145,3 +148,24 @@ http://depts.washington.edu/sociolab/links.htm
 
 Dictionary system:
 https://sourceforge.net/projects/dict-system/?source=directory
+
+
+Add a way to sync book marks from chrome to Firefox and vis versa:
+* http://www.makeuseof.com/tag/10-ways-integrate-firefox-chrome/
+* https://addons.mozilla.org/en-us/firefox/addon/fvd-synchronizer/
+* Xmarks: https://www.google.com/search?client=ubuntu&channel=fs&q=sync+bookmarks+firefox+chrome&ie=utf-8&oe=utf-8
+* Eversync
+
+Read, download, and work through this tutorial on fonts: https://pelson.github.io/tag/xkcd/
+
+Consider (in this script or a second scritp)
+Software for religeous uses:
+* http://vrsoft.org.ru/unbound/
+* http://www.openbible.info/geo/
+* http://www.crosswire.org/swordweb/
+* http://www.crosswire.org/applications/
+* https://unbound.biola.edu/index.cfm?method=unbound.links
+* http://paralleltext.info/data/
+* http://christos-c.com/bible/
+* http://www.umiacs.umd.edu/~resnik/parallel/bible.html
+* http://www.puk.ac.za/opencms/export/PUK/html/fakulteite/lettere/ctext/Bybelkorpus_e.html
